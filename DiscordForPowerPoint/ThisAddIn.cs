@@ -60,7 +60,7 @@ namespace DiscordForPowerPoint
                 new PowerPoint.EApplication_PresentationCloseFinalEventHandler(
                 Application_PresentationCloseFinal);
 
-            // Event handlers for when a file is created, opened, or saved
+            // Event handlers for when a file is created, opened, saved, or slide show ends.
             this.Application.AfterNewPresentation +=
                 new PowerPoint.EApplication_AfterNewPresentationEventHandler(
                 Application_AfterPresentationOpenEvent);
@@ -70,16 +70,14 @@ namespace DiscordForPowerPoint
             this.Application.PresentationSave +=
                 new PowerPoint.EApplication_PresentationSaveEventHandler(
                 Application_AfterPresentationOpenEvent);
+            this.Application.SlideShowEnd +=
+                new PowerPoint.EApplication_SlideShowEndEventHandler(
+                Application_AfterPresentationOpenEvent);
 
             // An event handler for when a slide show starts, or goes onto a new slide
             this.Application.SlideShowNextSlide +=
                 new PowerPoint.EApplication_SlideShowNextSlideEventHandler(
                 Application_SlideShowNextSlide);
-
-            // An event handler for when a slide show ends
-            this.Application.SlideShowEnd +=
-                new PowerPoint.EApplication_SlideShowEndEventHandler(
-                Application_SlideShowEnd);
         }
 
         // When Microsoft PowerPoint shuts down, delete the RPC client.
@@ -114,6 +112,7 @@ namespace DiscordForPowerPoint
             presence.Details = "No File Open";
             presence.State = "No File Open";
             presence.Party = null;
+            presence.Assets.LargeImageKey = "nothing";
 
             client.SetPresence(presence);
         }
@@ -122,6 +121,7 @@ namespace DiscordForPowerPoint
         {
             presence.Details = Pres.Name;
             presence.State = "Editing";
+            presence.Assets.LargeImageKey = "editing";
 
             // Slide selection is also triggered - Don't need to set presence
         }
@@ -129,14 +129,9 @@ namespace DiscordForPowerPoint
         public void Application_SlideShowNextSlide(SlideShowWindow Wn)
         {
             presence.State = "Presenting";
+            presence.Assets.LargeImageKey = "present";
             presence.Party.Size = Wn.View.CurrentShowPosition;
             client.SetPresence(presence);
-        }
-
-        public void Application_SlideShowEnd(Presentation Pres)
-        {
-            presence.State = "Editing";
-            // Slide selection is also triggered - Don't need to set presence
         }
 
         #region VSTO generated code
