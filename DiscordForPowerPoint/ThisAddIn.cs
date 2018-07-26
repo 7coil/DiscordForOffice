@@ -8,8 +8,7 @@ using Office = Microsoft.Office.Core;
 using System.Diagnostics;
 using DiscordRPC;
 using DiscordRPC.Logging;
-using DiscordRPC.Message;
-using System.Threading;
+using Microsoft.Office.Interop.PowerPoint;
 
 namespace DiscordForPowerPoint
 {
@@ -22,12 +21,12 @@ namespace DiscordForPowerPoint
 
         private static RichPresence presence = new RichPresence()
         {
-            Details = "Untitled Presentation",
+            Details = "Not Editing",
             State = "Editing",
             Assets = new Assets()
             {
                 LargeImageKey = "welcome",
-                LargeImageText = "Not Editing",
+                LargeImageText = "Microsoft PowerPoint",
                 SmallImageKey = "powerpoint"
             }
         };
@@ -45,6 +44,9 @@ namespace DiscordForPowerPoint
             this.Application.PresentationNewSlide += 
                 new PowerPoint.EApplication_PresentationNewSlideEventHandler(
                 Application_PresentationNewSlide);
+            this.Application.SlideSelectionChanged +=
+                new PowerPoint.EApplication_SlideSelectionChangedEventHandler(
+                Application_SlideSelectionChanged);
         }
 
         private void ThisAddIn_Shutdown(object sender, System.EventArgs e)
@@ -52,11 +54,37 @@ namespace DiscordForPowerPoint
             client.Dispose();
         }
 
-        private void Application_PresentationNewSlide(PowerPoint.Slide Sld)
+        private void Application_PresentationNewSlide(Slide Sld)
         {
             PowerPoint.Shape textBox = Sld.Shapes.AddTextbox(
                 Office.MsoTextOrientation.msoTextOrientationHorizontal, 0, 0, 500, 50);
             textBox.TextFrame.TextRange.InsertAfter("This text was added by using code.");
+
+            presence.Party = new Party()
+            {
+                Max = Application.ActivePresentation.Slides.Count
+            };
+
+            client.SetPresence(presence);
+        }
+
+        private void Application_SlideSelectionChanged(SlideRange SldRange)
+        {
+            if (SldRange.Count > 0)
+            {
+                presence.Party = new Party()
+                {
+                    ID = Secrets.CreateFriendlySecret(new Random()),
+                    Size = SldRange[1].SlideNumber,
+                    Max = Application.ActivePresentation.Slides.Count
+                };
+
+                client.SetPresence(presence);
+            }
+            else
+            {
+                Debug.Print("Please stop selecting BETWEEN slides. Thanks");
+            }
         }
 
         #region VSTO generated code
