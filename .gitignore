@@ -263,3 +263,6 @@ __pycache__/
 # Remove stuff that isn't ours
 assets/
 packages/
+
+# Private keys yay
+cert/
