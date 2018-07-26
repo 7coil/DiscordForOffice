@@ -1,0 +1,66 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2042
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiscordForPowerPoint", "DiscordForPowerPoint\DiscordForPowerPoint.csproj", "{8F6EAF0E-C731-4D94-85A2-DF6BD6F671F4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiscordRPC", "..\discord-rpc-csharp\Discord RPC\DiscordRPC.csproj", "{819D20D6-8D88-45C1-A4D2-AA21F10ABD19}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug Unity|Any CPU = Debug Unity|Any CPU
+		Debug Unity|x64 = Debug Unity|x64
+		Debug Unity|x86 = Debug Unity|x86
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8F6EAF0E-C731-4D94-85A2-DF6BD6F671F4}.Debug Unity|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F6EAF0E-C731-4D94-85A2-DF6BD6F671F4}.Debug Unity|Any CPU.Build.0 = Debug|Any CPU
+		{8F6EAF0E-C731-4D94-85A2-DF6BD6F671F4}.Debug Unity|x64.ActiveCfg = Debug|Any CPU
+		{8F6EAF0E-C731-4D94-85A2-DF6BD6F671F4}.Debug Unity|x64.Build.0 = Debug|Any CPU
+		{8F6EAF0E-C731-4D94-85A2-DF6BD6F671F4}.Debug Unity|x86.ActiveCfg = Debug|Any CPU
+		{8F6EAF0E-C731-4D94-85A2-DF6BD6F671F4}.Debug Unity|x86.Build.0 = Debug|Any CPU
+		{8F6EAF0E-C731-4D94-85A2-DF6BD6F671F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F6EAF0E-C731-4D94-85A2-DF6BD6F671F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F6EAF0E-C731-4D94-85A2-DF6BD6F671F4}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{8F6EAF0E-C731-4D94-85A2-DF6BD6F671F4}.Debug|x64.Build.0 = Debug|Any CPU
+		{8F6EAF0E-C731-4D94-85A2-DF6BD6F671F4}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{8F6EAF0E-C731-4D94-85A2-DF6BD6F671F4}.Debug|x86.Build.0 = Debug|Any CPU
+		{8F6EAF0E-C731-4D94-85A2-DF6BD6F671F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F6EAF0E-C731-4D94-85A2-DF6BD6F671F4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F6EAF0E-C731-4D94-85A2-DF6BD6F671F4}.Release|x64.ActiveCfg = Release|Any CPU
+		{8F6EAF0E-C731-4D94-85A2-DF6BD6F671F4}.Release|x64.Build.0 = Release|Any CPU
+		{8F6EAF0E-C731-4D94-85A2-DF6BD6F671F4}.Release|x86.ActiveCfg = Release|Any CPU
+		{8F6EAF0E-C731-4D94-85A2-DF6BD6F671F4}.Release|x86.Build.0 = Release|Any CPU
+		{819D20D6-8D88-45C1-A4D2-AA21F10ABD19}.Debug Unity|Any CPU.ActiveCfg = Debug Unity|Any CPU
+		{819D20D6-8D88-45C1-A4D2-AA21F10ABD19}.Debug Unity|Any CPU.Build.0 = Debug Unity|Any CPU
+		{819D20D6-8D88-45C1-A4D2-AA21F10ABD19}.Debug Unity|x64.ActiveCfg = Debug Unity|x64
+		{819D20D6-8D88-45C1-A4D2-AA21F10ABD19}.Debug Unity|x64.Build.0 = Debug Unity|x64
+		{819D20D6-8D88-45C1-A4D2-AA21F10ABD19}.Debug Unity|x86.ActiveCfg = Debug Unity|x86
+		{819D20D6-8D88-45C1-A4D2-AA21F10ABD19}.Debug Unity|x86.Build.0 = Debug Unity|x86
+		{819D20D6-8D88-45C1-A4D2-AA21F10ABD19}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{819D20D6-8D88-45C1-A4D2-AA21F10ABD19}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{819D20D6-8D88-45C1-A4D2-AA21F10ABD19}.Debug|x64.ActiveCfg = Debug|x64
+		{819D20D6-8D88-45C1-A4D2-AA21F10ABD19}.Debug|x64.Build.0 = Debug|x64
+		{819D20D6-8D88-45C1-A4D2-AA21F10ABD19}.Debug|x86.ActiveCfg = Debug|x86
+		{819D20D6-8D88-45C1-A4D2-AA21F10ABD19}.Debug|x86.Build.0 = Debug|x86
+		{819D20D6-8D88-45C1-A4D2-AA21F10ABD19}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{819D20D6-8D88-45C1-A4D2-AA21F10ABD19}.Release|Any CPU.Build.0 = Release|Any CPU
+		{819D20D6-8D88-45C1-A4D2-AA21F10ABD19}.Release|x64.ActiveCfg = Release|x64
+		{819D20D6-8D88-45C1-A4D2-AA21F10ABD19}.Release|x64.Build.0 = Release|x64
+		{819D20D6-8D88-45C1-A4D2-AA21F10ABD19}.Release|x86.ActiveCfg = Release|x86
+		{819D20D6-8D88-45C1-A4D2-AA21F10ABD19}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8AC204BF-3DB2-4730-B963-F46747F6C755}
+	EndGlobalSection
+EndGlobal
