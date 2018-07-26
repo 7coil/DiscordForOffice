@@ -21,13 +21,17 @@ namespace DiscordForPowerPoint
 
         private static RichPresence presence = new RichPresence()
         {
-            Details = "Not Editing",
-            State = "Editing",
+            Details = "No File Open",
+            State = "Welcome Screen",
             Assets = new Assets()
             {
                 LargeImageKey = "welcome",
                 LargeImageText = "Microsoft PowerPoint",
                 SmallImageKey = "powerpoint"
+            },
+            Party = new Party()
+            {
+                ID = Secrets.CreateFriendlySecret(new Random())
             }
         };
 
@@ -40,15 +44,45 @@ namespace DiscordForPowerPoint
 
             client.SetPresence(presence);
 
-            Debug.Print("aaa");
+            // An event handler for when a new slide is created
             this.Application.PresentationNewSlide += 
                 new PowerPoint.EApplication_PresentationNewSlideEventHandler(
                 Application_PresentationNewSlide);
+
+            // An event handler for any time a slide / slides / inbetween slides is selected
             this.Application.SlideSelectionChanged +=
                 new PowerPoint.EApplication_SlideSelectionChangedEventHandler(
                 Application_SlideSelectionChanged);
+
+            // An event handler for when a file is closed.
+            // Final = Actually closed
+            this.Application.PresentationCloseFinal +=
+                new PowerPoint.EApplication_PresentationCloseFinalEventHandler(
+                Application_PresentationCloseFinal);
+
+            // Event handlers for when a file is created, opened, or saved
+            this.Application.AfterNewPresentation +=
+                new PowerPoint.EApplication_AfterNewPresentationEventHandler(
+                Application_AfterPresentationOpenEvent);
+            this.Application.AfterPresentationOpen +=
+                new PowerPoint.EApplication_AfterPresentationOpenEventHandler(
+                Application_AfterPresentationOpenEvent);
+            this.Application.PresentationSave +=
+                new PowerPoint.EApplication_PresentationSaveEventHandler(
+                Application_AfterPresentationOpenEvent);
+
+            // An event handler for when a slide show starts, or goes onto a new slide
+            this.Application.SlideShowNextSlide +=
+                new PowerPoint.EApplication_SlideShowNextSlideEventHandler(
+                Application_SlideShowNextSlide);
+
+            // An event handler for when a slide show ends
+            this.Application.SlideShowEnd +=
+                new PowerPoint.EApplication_SlideShowEndEventHandler(
+                Application_SlideShowEnd);
         }
 
+        // When Microsoft PowerPoint shuts down, delete the RPC client.
         private void ThisAddIn_Shutdown(object sender, System.EventArgs e)
         {
             client.Dispose();
@@ -56,14 +90,10 @@ namespace DiscordForPowerPoint
 
         private void Application_PresentationNewSlide(Slide Sld)
         {
-            PowerPoint.Shape textBox = Sld.Shapes.AddTextbox(
-                Office.MsoTextOrientation.msoTextOrientationHorizontal, 0, 0, 500, 50);
-            textBox.TextFrame.TextRange.InsertAfter("This text was added by using code.");
+            presence.Party.Max = Application.ActivePresentation.Slides.Count;
 
-            presence.Party = new Party()
-            {
-                Max = Application.ActivePresentation.Slides.Count
-            };
+            // Assumption: People start on slide 1 when creating a file
+            presence.Party.Size = 1;
 
             client.SetPresence(presence);
         }
@@ -72,19 +102,41 @@ namespace DiscordForPowerPoint
         {
             if (SldRange.Count > 0)
             {
-                presence.Party = new Party()
-                {
-                    ID = Secrets.CreateFriendlySecret(new Random()),
-                    Size = SldRange[1].SlideNumber,
-                    Max = Application.ActivePresentation.Slides.Count
-                };
-
+                presence.Party.Max = Application.ActivePresentation.Slides.Count;
+                presence.Party.Size = SldRange[1].SlideNumber;
                 client.SetPresence(presence);
             }
-            else
-            {
-                Debug.Print("Please stop selecting BETWEEN slides. Thanks");
-            }
+        }
+
+        public void Application_PresentationCloseFinal(Presentation Pres)
+        {
+            Debug.Print("Presentation Closed");
+            presence.Details = "No File Open";
+            presence.State = "No File Open";
+            presence.Party = null;
+
+            client.SetPresence(presence);
+        }
+
+        public void Application_AfterPresentationOpenEvent(Presentation Pres)
+        {
+            presence.Details = Pres.Name;
+            presence.State = "Editing";
+
+            // Slide selection is also triggered - Don't need to set presence
+        }
+
+        public void Application_SlideShowNextSlide(SlideShowWindow Wn)
+        {
+            presence.State = "Presenting";
+            presence.Party.Size = Wn.View.CurrentShowPosition;
+            client.SetPresence(presence);
+        }
+
+        public void Application_SlideShowEnd(Presentation Pres)
+        {
+            presence.State = "Editing";
+            // Slide selection is also triggered - Don't need to set presence
         }
 
         #region VSTO generated code
