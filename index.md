@@ -1,7 +1,10 @@
 <html>
     <body>
         <h1>Discord Rich Presence for Microsoft Office</h1>
-        <p>Install by dangerously adding our public key, or compile it yourself</p>
+        <h2>Demo</h2>
+        <video width=800 height=450 controls>
+            <source src="assets/video/PowerPointDemo.mp4">
+        </video>
         <ul>
             <li><a href="https://github.com/Terminal/DiscordForOffice/releases">Downloads</a></li>
         </ul>
