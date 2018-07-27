@@ -1,18 +1,13 @@
-<html>
-    <body>
-        <h1>Discord Rich Presence for Microsoft Office</h1>
-        <h2>Demo</h2>
-        <video width=800 height=450 controls>
-            <source src="assets/video/PowerPointDemo.mp4">
-        </video>
-        <ul>
-            <li><a href="https://github.com/Terminal/DiscordForOffice/releases">Downloads</a></li>
-        </ul>
-        <ul>
-            <li><a href="https://github.com/terminal/DiscordForOffice">GitHub</a></li>
-            <li><a href="https://terminal.ink/">Terminal.ink</a></li>
-        </ul>
-        <hr>
-        <i>Copyright Terminal.ink, 2017 - 2018</i>
-    </body>
-</html>
+# Discord Rich Presence for Microsoft Office
+## Demo
+<video width=800 height=450 controls>
+    <source src="/assets/video/PowerPointDemo.mp4">
+</video>
+
+### Useful Links
+- [Downloads](https://github.com/Terminal/DiscordForOffice/releases)
+- [GitHub](https://github.com/terminal/DiscordForOffice)
+- [Terminal.ink](https://terminal.ink/)
+
+<hr>
+_Copyright Terminal.ink, 2017 - 2018_
