@@ -14,6 +14,20 @@ namespace DiscordForPowerPoint
 {
     public partial class ThisAddIn
     {
+        private static IDictionary<int, string> OfficeVersions = new Dictionary<int, string>() {
+            {6, "4.x"},
+            {7, "95"},
+            {8, "97"},
+            {9, "2000"},
+            {10, "XP"},
+            {11, "2003"},
+            {12, "2007"},
+            {14, "2010"},
+            {15, "2013"},
+            {16, "2016"},
+            {17, "2017"}
+        };
+
         public DiscordRpcClient client;
         private static int DiscordPipe = -1;
         private static string ClientID = "470239659591598091";
@@ -26,12 +40,7 @@ namespace DiscordForPowerPoint
             Assets = new Assets()
             {
                 LargeImageKey = "welcome",
-                LargeImageText = "Microsoft PowerPoint",
                 SmallImageKey = "powerpoint"
-            },
-            Party = new Party()
-            {
-                ID = Secrets.CreateFriendlySecret(new Random())
             }
         };
 
@@ -39,6 +48,8 @@ namespace DiscordForPowerPoint
         {
             client = new DiscordRpcClient(ClientID, true, DiscordPipe);
             client.Logger = new DiscordRPC.Logging.ConsoleLogger() { Level = DiscordLogLevel, Coloured = true };
+
+            presence.Assets.LargeImageText = "Microsoft PowerPoint " + OfficeVersions[Process.GetCurrentProcess().MainModule.FileVersionInfo.ProductMajorPart];
 
             client.Initialize();
 
@@ -88,10 +99,12 @@ namespace DiscordForPowerPoint
 
         private void Application_PresentationNewSlide(Slide Sld)
         {
-            presence.Party.Max = Application.ActivePresentation.Slides.Count;
-
             // Assumption: People start on slide 1 when creating a file
-            presence.Party.Size = 1;
+            presence.Party = new Party()
+            {
+                Max = Application.ActivePresentation.Slides.Count,
+                Size = 1
+            };
 
             client.SetPresence(presence);
         }
@@ -100,19 +113,33 @@ namespace DiscordForPowerPoint
         {
             if (SldRange.Count > 0)
             {
-                presence.Party.Max = Application.ActivePresentation.Slides.Count;
-                presence.Party.Size = SldRange[1].SlideNumber;
+                presence.Details = SldRange.Application.ActivePresentation.Name;
+                presence.State = "Editing";
+                presence.Assets.LargeImageKey = "editing";
+                presence.Party = new Party()
+                {
+                    ID = Secrets.CreateFriendlySecret(new Random()),
+                    Max = Application.ActivePresentation.Slides.Count,
+                    Size = SldRange[1].SlideNumber
+                };
                 client.SetPresence(presence);
             }
         }
 
         public void Application_PresentationCloseFinal(Presentation Pres)
         {
-            Debug.Print("Presentation Closed");
-            presence.Details = "No File Open";
-            presence.State = "No File Open";
-            presence.Party = null;
-            presence.Assets.LargeImageKey = "nothing";
+            if (Application.Presentations.Count == 1)
+            {
+                Debug.Print("Presentation Closed");
+                presence.Details = "No File Open";
+                presence.State = "No File Open";
+                presence.Party = null;
+                presence.Assets.LargeImageKey = "nothing";
+            }
+            else
+            {
+                presence.Details = Application.ActivePresentation.Name;
+            }
 
             client.SetPresence(presence);
         }
@@ -128,9 +155,15 @@ namespace DiscordForPowerPoint
 
         public void Application_SlideShowNextSlide(SlideShowWindow Wn)
         {
+            presence.Details = Wn.Presentation.Name;
             presence.State = "Presenting";
             presence.Assets.LargeImageKey = "present";
-            presence.Party.Size = Wn.View.CurrentShowPosition;
+            presence.Party = new Party()
+            {
+                ID = Secrets.CreateFriendlySecret(new Random()),
+                Max = Wn.Presentation.Slides.Count,
+                Size = Wn.View.CurrentShowPosition
+            };
             client.SetPresence(presence);
         }
 
