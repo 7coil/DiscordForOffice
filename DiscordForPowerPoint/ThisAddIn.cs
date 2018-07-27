@@ -36,6 +36,7 @@ namespace DiscordForPowerPoint
             Assets = new Assets()
             {
                 LargeImageKey = "welcome",
+                LargeImageText = "Microsoft PowerPoint " + OfficeVersions[Process.GetCurrentProcess().MainModule.FileVersionInfo.ProductMajorPart],
                 SmallImageKey = "powerpoint"
             }
         };
@@ -44,11 +45,7 @@ namespace DiscordForPowerPoint
         {
             client = new DiscordRpcClient(ClientID, true, DiscordPipe);
             client.Logger = new DiscordRPC.Logging.ConsoleLogger() { Level = DiscordLogLevel, Coloured = true };
-
-            presence.Assets.LargeImageText = "Microsoft PowerPoint " + OfficeVersions[Process.GetCurrentProcess().MainModule.FileVersionInfo.ProductMajorPart];
-
             client.Initialize();
-
             client.SetPresence(presence);
 
             // An event handler for when a new slide is created
@@ -124,6 +121,7 @@ namespace DiscordForPowerPoint
 
         public void Application_PresentationCloseFinal(Presentation Pres)
         {
+            // There's only one presentation left - the current one
             if (Application.Presentations.Count == 1)
             {
                 Debug.Print("Presentation Closed");
@@ -143,7 +141,7 @@ namespace DiscordForPowerPoint
         public void Application_AfterPresentationOpenEvent(Presentation Pres)
         {
             presence.Details = Pres.Name;
-            presencoe.State = "Editing";
+            presence.State = "Editing";
             presence.Assets.LargeImageKey = "editing";
 
             // Slide selection is also triggered - Don't need to set presence
