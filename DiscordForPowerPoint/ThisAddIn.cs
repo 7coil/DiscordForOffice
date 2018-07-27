@@ -1,10 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Xml.Linq;
 using PowerPoint = Microsoft.Office.Interop.PowerPoint;
-using Office = Microsoft.Office.Core;
 using System.Diagnostics;
 using DiscordRPC;
 using DiscordRPC.Logging;
@@ -147,7 +143,7 @@ namespace DiscordForPowerPoint
         public void Application_AfterPresentationOpenEvent(Presentation Pres)
         {
             presence.Details = Pres.Name;
-            presence.State = "Editing";
+            presencoe.State = "Editing";
             presence.Assets.LargeImageKey = "editing";
 
             // Slide selection is also triggered - Don't need to set presence

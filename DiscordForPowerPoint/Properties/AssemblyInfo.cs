@@ -6,12 +6,12 @@ using System.Security;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("DiscordForPowerPoint")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("DiscordForPowerPoint2010")]
+[assembly: AssemblyDescription("The Microsoft PowerPoint 2010 to Discord Rich Presence Plugin")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("DiscordForPowerPoint")]
-[assembly: AssemblyCopyright("Copyright ©  2018")]
+[assembly: AssemblyCompany("Terminal.ink")]
+[assembly: AssemblyProduct("DiscordForPowerPoint2010")]
+[assembly: AssemblyCopyright("Copyright © Terminal.ink 2018")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
