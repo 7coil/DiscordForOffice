@@ -1,0 +1,217 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
+  <asmv1:assemblyIdentity name="DiscordForExcel.dll" version="1.0.2.0" publicKeyToken="94bab1b1091544a7" language="neutral" processorArchitecture="msil" type="win32" />
+  <description xmlns="urn:schemas-microsoft-com:asm.v1">DiscordForExcel</description>
+  <application />
+  <entryPoint>
+    <co.v1:customHostSpecified />
+  </entryPoint>
+  <trustInfo>
+    <security>
+      <applicationRequestMinimum>
+        <PermissionSet Unrestricted="true" ID="Custom" SameSite="site" />
+        <defaultAssemblyRequest permissionSetReference="Custom" />
+      </applicationRequestMinimum>
+      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
+        <!--
+          UAC Manifest Options
+          If you want to change the Windows User Account Control level replace the 
+          requestedExecutionLevel node with one of the following.
+
+        <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
+        <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
+        <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
+
+         If you want to utilize File and Registry Virtualization for backward 
+         compatibility then delete the requestedExecutionLevel node.
+    -->
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+  <dependency>
+    <dependentOS>
+      <osVersionInfo>
+        <os majorVersion="5" minorVersion="1" buildNumber="2600" servicePackMajor="0" />
+      </osVersionInfo>
+    </dependentOS>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="4.0.30319.0" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Accessibility" version="4.0.0.0" publicKeyToken="B03F5F7F11D50A3A" language="neutral" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.CSharp" version="4.0.0.0" publicKeyToken="B03F5F7F11D50A3A" language="neutral" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Office.Tools" version="10.0.0.0" publicKeyToken="B03F5F7F11D50A3A" language="neutral" processorArchitecture="msil" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Office.Tools.Common" version="10.0.0.0" publicKeyToken="B03F5F7F11D50A3A" language="neutral" processorArchitecture="msil" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Office.Tools.Excel" version="10.0.0.0" publicKeyToken="B03F5F7F11D50A3A" language="neutral" processorArchitecture="msil" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Office.Tools.v4.0.Framework" version="10.0.0.0" publicKeyToken="B03F5F7F11D50A3A" language="neutral" processorArchitecture="msil" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.VisualStudio.Tools.Applications.Runtime" version="10.0.0.0" publicKeyToken="B03F5F7F11D50A3A" language="neutral" processorArchitecture="msil" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="mscorlib" version="4.0.0.0" publicKeyToken="B77A5C561934E089" language="neutral" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="stdole" version="7.0.3300.0" publicKeyToken="B03F5F7F11D50A3A" language="neutral" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="System" version="4.0.0.0" publicKeyToken="B77A5C561934E089" language="neutral" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="System.Core" version="4.0.0.0" publicKeyToken="B77A5C561934E089" language="neutral" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="System.Data" version="4.0.0.0" publicKeyToken="B77A5C561934E089" language="neutral" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="System.Data.DataSetExtensions" version="4.0.0.0" publicKeyToken="B77A5C561934E089" language="neutral" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="System.Drawing" version="4.0.0.0" publicKeyToken="B03F5F7F11D50A3A" language="neutral" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="System.Runtime.Serialization" version="4.0.0.0" publicKeyToken="B77A5C561934E089" language="neutral" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="System.Windows.Forms" version="4.0.0.0" publicKeyToken="B77A5C561934E089" language="neutral" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="System.Xml" version="4.0.0.0" publicKeyToken="B77A5C561934E089" language="neutral" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="System.Xml.Linq" version="4.0.0.0" publicKeyToken="B77A5C561934E089" language="neutral" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DiscordForExcel.dll" size="14336">
+      <assemblyIdentity name="DiscordForExcel" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>qsO2JFesn2gd0ztgpQHIGm/3BP+1hFDw/BLc/Lbj5Ck=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DiscordRPC.dll" size="73216">
+      <assemblyIdentity name="DiscordRPC" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>A6bOD2fl5q6Z/Yn530lzijPiCSrJgxOMN+89VhujKL4=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Microsoft.Office.Tools.Common.v4.0.Utilities.dll" size="32664">
+      <assemblyIdentity name="Microsoft.Office.Tools.Common.v4.0.Utilities" version="10.0.0.0" publicKeyToken="B03F5F7F11D50A3A" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>jLCTF8Mm6bD4PDN+rnzN6q0+ReXaNgPh68kMWgatFwI=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Newtonsoft.Json.dll" size="475648">
+      <assemblyIdentity name="Newtonsoft.Json" version="11.0.0.0" publicKeyToken="30AD4FE6B2A6AEED" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>VYIyzIs7VApSLovGNzbT/6S7F5rw6x53bh285JwNe1o=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Shared.dll" size="6144">
+      <assemblyIdentity name="Shared" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>Te1gGFlogBJJCnGTtEsNw7wGyo+zPrbKxiQzzH4Z/bk=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <vstav3:addIn xmlns:vstav3="urn:schemas-microsoft-com:vsta.v3">
+    <vstav3:entryPointsCollection>
+      <vstav3:entryPoints>
+        <vstav3:entryPoint class="DiscordForExcel.ThisAddIn">
+          <assemblyIdentity name="DiscordForExcel" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+        </vstav3:entryPoint>
+      </vstav3:entryPoints>
+    </vstav3:entryPointsCollection>
+    <vstav3:update enabled="true">
+      <vstav3:expiration maximumAge="7" unit="days" />
+    </vstav3:update>
+    <vstav3:application>
+      <vstov4:customizations xmlns:vstov4="urn:schemas-microsoft-com:vsto.v4">
+        <vstov4:customization>
+          <vstov4:appAddIn application="Excel" loadBehavior="3" keyName="DiscordForExcel">
+            <vstov4:friendlyName>DiscordForExcel</vstov4:friendlyName>
+            <vstov4:description>DiscordForExcel</vstov4:description>
+            <vstov4.1:ribbonTypes xmlns:vstov4.1="urn:schemas-microsoft-com:vsto.v4.1" />
+          </vstov4:appAddIn>
+        </vstov4:customization>
+      </vstov4:customizations>
+    </vstav3:application>
+  </vstav3:addIn>
+<publisherIdentity name="E=admin@moustacheminer.com, CN=terminal.ink, O=&quot;Terminal.ink (7coil#3175)&quot;, S=Kent, C=GB" issuerKeyHash="c48fc34ae9170e1050df1e9cc8c075f180c55ebe" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>Zvym2c6Zgtbo1HiL9ZFAnNBvNDbKdfYmVLxbojQzNg0=</DigestValue></Reference></SignedInfo><SignatureValue>oNRqtbooBPmbWOn1jivKRbU1/pV4w4k852WQSEBgu7B9jWOOlo0vCN9gybHA370auysMJCTWyAZ+bryCGHar44D4b/NZyQ8BUHOJYGa2pt5boX2KJZrXH96LpePnYikqJR+bZJsoSKuzGuUH29SB1LYC9I2/5OOXG3uMKVKwG0CtL4BmrkgMIvexPMDkDe1MntRai5CEb/G6//h5VDu5L/JZs6TTJ6EvNNqzq5//rEqyET091KUcLsrTxAe1YfluPAMVK6VIiET4CjN3cQsB8E4berCxmF150J5A+keJCWLT2POrbY5A72dZ8080EKC8b4wZBzAPMaqEpBEL2ekjC6FZqVoceyxc5hFj7V6SdqV/TD7kxV2WWqWtZsrwCzgjTI5eDipnZMMircmJeQiVq/d7zzPUuXpA/eJWqWR65n4PHP8+XHm3X7wnLnfA7KVC7CNFEDuVQozCQziVqecgIgiQlJ4Mq0W4yUvxsfOhsRjnGYCU6087cCByh/1mMBf6OErLNLbQK2RHOGS32OidJtioPheHONCUX9jO9RcKZhe1xwq8NIxIsnasfJR9C3vX7SBf5i5nGqvjnLsU+kjYL+qC7R2eUbYqNtZJ5OygR9bEQpMVJFXbpBDle+kczeuFP27R2+6HGBg3uYiXPpGZvo+8sXl0T6GlWaIFj28yiR8=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>3ZB6LZ2NRVlM4BFGvgMkMgwrLY1MaWqnzrN2j9BQdxIYIpsmVX+MTWhd8dW9LDpnCsPfvHsIxbM61aZKO5haIvl8X6EV38prt9/Lj3cOwwQc0yTSvvUOLuIyII7+0SpdijqPF6vS29QIIvcvMTIF25d8wg0gKxm4MMdMuqwsDLCc4Y50+bRFg2OGUPG7rUysN0rSAA3ElPSM8Ic1fHyeRdSIFvFqD1z7hTuy8vzKfyCqo1qtc0tme3rKpAAw+h8riruL/Z7kZmtmGWVeiQ/cNTxpn4euK1DEGGmNB3XotvT2sSKssbTSZrVsE/6LqT64QViIeU4KYlvBt4FYkbT5bFtvXtV4W6nSYN690ukmB6OBEtUS2nqS+pvgUhdymfLii8EwnRneI1azRMuAe2TI+x//9wnHIg+QPlJEcWEck8YLsfs9LnEqlfmfnsxV5zoBagFDIBPnorKhL8IxE15na7IxH3o3+isdsee+1dAQ4cDQvuf7S5wunQeQiUfrxAo1kmXzXHUEAPvykPZ4TGdB96pdHyT0O3J4BoPgO2VoaoErv6qOTj1p3ifHIDqTJYUT3W0PfWBSl0X3UeurN6HVPPhODEfndbWwN5X+WyCC0LlqQNxDldloCjJ2XHqO/h+jGkwJwI9IUiaD9CoL+2d464o2LxFRrK/iNJp8Hf31AKM=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="0d363334a25bbc5426f675ca36346fd09c4091f58b78d4e8d68299ced9a6fc66" Description="" Url=""><as:assemblyIdentity name="DiscordForExcel.dll" version="1.0.2.0" publicKeyToken="94bab1b1091544a7" language="neutral" processorArchitecture="msil" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>E=admin@moustacheminer.com, CN=terminal.ink, O="Terminal.ink (7coil#3175)", S=Kent, C=GB</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>0IKI0QjYr2/GcuUt/5/Ih5TtAmnMrpYVQWOLF+FRX/4=</DigestValue></Reference></SignedInfo><SignatureValue>BEyGJeA5qkvymELIFaTet19ffaDk1p19COzQPhk1gyO/sk2imCsoIROjnSJMCHpRECVKdG+YcOuiAjVOLFY9lHYvhp+8EKw5md0UPy3mRUASzsZtRd//uEl4LORny5bAvO3kyuv2zgqrfQKGNyhcd2fkEGczQ0AzhvxlpGp9SIojRHNwZs4gFCdcCInGMu0Tm4jHo2bk+bapr1QXnj1Ntn+Ut87j0jPl15qtzfn/IWJc1XgQkteL3og541Uvc69EdMfhskLALa8DUSWBr4NfEq1s6FXk0eJTVv0YBTrwZSWLcPyGVAa1+oURRkQWv3A/FgWpLnSR4u8An+KiIOWCOLMAd7Fn7f64+spkGNakuEZGPp1AikT+eYxFLPSCRR0OXf0uKhDuaiWloQJBV+olLNYWhctQ0oO8U7y31dqr68GpaYFtmXFKzdC0jKrkUQdJCU2zZb96aMZa93P/oEpX4UwIEAMvWUC8PJ4eP6V9G9h2Uw29MzUWsSb95Yk21EqCkqupD07BXJswVHCWpiqurGBAoHAHhZ4+xP74C+MBOhYNcgE1/kxGF9OCBrmp74RN+faeH2k1R/oMnHgy8CekoepD7C0XzPnBkdS5LV9GUhnJmIEjutFwYPH2mShTVZF/B3nI2ms4960MmqCPTP7F1YajgIx+9hNJoA4K4Atzyw8=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>3ZB6LZ2NRVlM4BFGvgMkMgwrLY1MaWqnzrN2j9BQdxIYIpsmVX+MTWhd8dW9LDpnCsPfvHsIxbM61aZKO5haIvl8X6EV38prt9/Lj3cOwwQc0yTSvvUOLuIyII7+0SpdijqPF6vS29QIIvcvMTIF25d8wg0gKxm4MMdMuqwsDLCc4Y50+bRFg2OGUPG7rUysN0rSAA3ElPSM8Ic1fHyeRdSIFvFqD1z7hTuy8vzKfyCqo1qtc0tme3rKpAAw+h8riruL/Z7kZmtmGWVeiQ/cNTxpn4euK1DEGGmNB3XotvT2sSKssbTSZrVsE/6LqT64QViIeU4KYlvBt4FYkbT5bFtvXtV4W6nSYN690ukmB6OBEtUS2nqS+pvgUhdymfLii8EwnRneI1azRMuAe2TI+x//9wnHIg+QPlJEcWEck8YLsfs9LnEqlfmfnsxV5zoBagFDIBPnorKhL8IxE15na7IxH3o3+isdsee+1dAQ4cDQvuf7S5wunQeQiUfrxAo1kmXzXHUEAPvykPZ4TGdB96pdHyT0O3J4BoPgO2VoaoErv6qOTj1p3ifHIDqTJYUT3W0PfWBSl0X3UeurN6HVPPhODEfndbWwN5X+WyCC0LlqQNxDldloCjJ2XHqO/h+jGkwJwI9IUiaD9CoL+2d464o2LxFRrK/iNJp8Hf31AKM=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIF2jCCA8KgAwIBAgIJANTNF/AEeiAfMA0GCSqGSIb3DQEBCwUAMIGAMQswCQYDVQQGEwJHQjENMAsGA1UECAwES2VudDEiMCAGA1UECgwZVGVybWluYWwuaW5rICg3Y29pbCMzMTc1KTEVMBMGA1UEAwwMdGVybWluYWwuaW5rMScwJQYJKoZIhvcNAQkBFhhhZG1pbkBtb3VzdGFjaGVtaW5lci5jb20wIBcNMTgwNzI2MjE1NzE5WhgPMjExODA3MDIyMTU3MTlaMIGAMQswCQYDVQQGEwJHQjENMAsGA1UECAwES2VudDEiMCAGA1UECgwZVGVybWluYWwuaW5rICg3Y29pbCMzMTc1KTEVMBMGA1UEAwwMdGVybWluYWwuaW5rMScwJQYJKoZIhvcNAQkBFhhhZG1pbkBtb3VzdGFjaGVtaW5lci5jb20wggIiMA0GCSqGSIb3DQEBAQUAA4ICDwAwggIKAoICAQDdkHotnY1FWUzgEUa+AyQyDCstjUxpaqfOs3aP0FB3EhgimyZVf4xNaF3x1b0sOmcKw9+8ewjFszrVpko7mFoi+XxfoRXfymu338uPdw7DBBzTJNK+9Q4u4jIgjv7RKl2KOo8Xq9Lb1Agi9y8xMgXbl3zCDSArGbgwx0y6rCwMsJzhjnT5tEWDY4ZQ8butTKw3StIADcSU9IzwhzV8fJ5F1IgW8WoPXPuFO7Ly/Mp/IKqjWq1zS2Z7esqkADD6HyuKu4v9nuRma2YZZV6JD9w1PGmfh64rUMQYaY0Hdei29PaxIqyxtNJmtWwT/oupPrhBWIh5TgpiW8G3gViRtPlsW29e1XhbqdJg3r3S6SYHo4ES1RLaepL6m+BSF3KZ8uKLwTCdGd4jVrNEy4B7ZMj7H//3CcciD5A+UkRxYRyTxgux+z0ucSqV+Z+ezFXnOgFqAUMgE+eisqEvwjETXmdrsjEfejf6Kx2x577V0BDhwNC+5/tLnC6dB5CJR+vECjWSZfNcdQQA+/KQ9nhMZ0H3ql0fJPQ7cngGg+A7ZWhqgSu/qo5OPWneJ8cgOpMlhRPdbQ99YFKXRfdR66s3odU8+E4MR+d1tbA3lf5bIILQuWpA3EOV2WgKMnZceo7+H6MaTAnAj0hSJoP0Kgv7Z3jrijYvEVGsr+I0mnwd/fUAowIDAQABo1MwUTAdBgNVHQ4EFgQUxI/DSukXDhBQ3x6cyMB18YDFXr4wHwYDVR0jBBgwFoAUxI/DSukXDhBQ3x6cyMB18YDFXr4wDwYDVR0TAQH/BAUwAwEB/zANBgkqhkiG9w0BAQsFAAOCAgEAT8xnhgIv16aXfrUPggkqGV4yAbhFfxbfIufCJEw0Gtfg5dcxVW5QCX0i1A/LRhoqbnTQRbdfXdJeLK3t/jMpJUHhep4vsLb2Zv7UOjpVDPn5YVtlGW/dYwCDTbEf5dTWcyqf70rjusLIA+8SRJwSc+Dn1fGjBDAtkk+EhpfnVCCLTSPynnVva3sZeXJLGjTdDzGvON6/okKOw4X4bRkWjy+O1kRZhkg0+vfj79P45QIixfR0+/FuKw0OLqD+gZ9JD0lqos1g4qZxni8JcsAgSBdWefoWRf06SEC58dh4DdzcYhCCpOyUMRRUGIaMVKstqmMw5BSd7QmfoH5qf+A1CRwXBbAwA6aO7aNZ0CmqBBSsn4wNNYbJN9jMifE0ac2n0vNfDw/XH4GrOso3fvRGauAZuspfBV9NzTqvPfxWdG9Jql5EL98JE2OsMddPGE51WqNBwtx0I1QujF8DBOj2+76vg+G9iNKGw2+hqLi8TLEOzp3J06BrETVabo9oYvvXMyVw74giafGZqhk69edl9BUogQvYkY9hPWdk4+nRzkwxdf9BBo7JAfwRgxsM3SClRqjtmMCZxfAbq5zY6suDF6NIGxpbO21oDEgg71SJpZFqZFYauQGStR1g81wjFScoil5BfxCiDXAN2GxDhZzxItlOBYVUjXXfGUJscpG0SfA=</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>
