@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiscordForExcel", "DiscordF
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiscordRPC", "discord-rpc-csharp\Discord RPC\DiscordRPC.csproj", "{819D20D6-8D88-45C1-A4D2-AA21F10ABD19}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiscordForWord", "DiscordForWord\DiscordForWord.csproj", "{0FF18081-EA7B-43E5-BE2B-10D50A479C15}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shared", "Shared\Shared.csproj", "{3FFB6368-18CB-45ED-A36D-2CD8593382CB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug Unity|Any CPU = Debug Unity|Any CPU
@@ -76,6 +80,42 @@ Global
 		{819D20D6-8D88-45C1-A4D2-AA21F10ABD19}.Release|x64.Build.0 = Release|x64
 		{819D20D6-8D88-45C1-A4D2-AA21F10ABD19}.Release|x86.ActiveCfg = Release|x86
 		{819D20D6-8D88-45C1-A4D2-AA21F10ABD19}.Release|x86.Build.0 = Release|x86
+		{0FF18081-EA7B-43E5-BE2B-10D50A479C15}.Debug Unity|Any CPU.ActiveCfg = Debug|Any CPU
+		{0FF18081-EA7B-43E5-BE2B-10D50A479C15}.Debug Unity|Any CPU.Build.0 = Debug|Any CPU
+		{0FF18081-EA7B-43E5-BE2B-10D50A479C15}.Debug Unity|x64.ActiveCfg = Debug|Any CPU
+		{0FF18081-EA7B-43E5-BE2B-10D50A479C15}.Debug Unity|x64.Build.0 = Debug|Any CPU
+		{0FF18081-EA7B-43E5-BE2B-10D50A479C15}.Debug Unity|x86.ActiveCfg = Debug|Any CPU
+		{0FF18081-EA7B-43E5-BE2B-10D50A479C15}.Debug Unity|x86.Build.0 = Debug|Any CPU
+		{0FF18081-EA7B-43E5-BE2B-10D50A479C15}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0FF18081-EA7B-43E5-BE2B-10D50A479C15}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0FF18081-EA7B-43E5-BE2B-10D50A479C15}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{0FF18081-EA7B-43E5-BE2B-10D50A479C15}.Debug|x64.Build.0 = Debug|Any CPU
+		{0FF18081-EA7B-43E5-BE2B-10D50A479C15}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{0FF18081-EA7B-43E5-BE2B-10D50A479C15}.Debug|x86.Build.0 = Debug|Any CPU
+		{0FF18081-EA7B-43E5-BE2B-10D50A479C15}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0FF18081-EA7B-43E5-BE2B-10D50A479C15}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0FF18081-EA7B-43E5-BE2B-10D50A479C15}.Release|x64.ActiveCfg = Release|Any CPU
+		{0FF18081-EA7B-43E5-BE2B-10D50A479C15}.Release|x64.Build.0 = Release|Any CPU
+		{0FF18081-EA7B-43E5-BE2B-10D50A479C15}.Release|x86.ActiveCfg = Release|Any CPU
+		{0FF18081-EA7B-43E5-BE2B-10D50A479C15}.Release|x86.Build.0 = Release|Any CPU
+		{3FFB6368-18CB-45ED-A36D-2CD8593382CB}.Debug Unity|Any CPU.ActiveCfg = Debug|Any CPU
+		{3FFB6368-18CB-45ED-A36D-2CD8593382CB}.Debug Unity|Any CPU.Build.0 = Debug|Any CPU
+		{3FFB6368-18CB-45ED-A36D-2CD8593382CB}.Debug Unity|x64.ActiveCfg = Debug|Any CPU
+		{3FFB6368-18CB-45ED-A36D-2CD8593382CB}.Debug Unity|x64.Build.0 = Debug|Any CPU
+		{3FFB6368-18CB-45ED-A36D-2CD8593382CB}.Debug Unity|x86.ActiveCfg = Debug|Any CPU
+		{3FFB6368-18CB-45ED-A36D-2CD8593382CB}.Debug Unity|x86.Build.0 = Debug|Any CPU
+		{3FFB6368-18CB-45ED-A36D-2CD8593382CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3FFB6368-18CB-45ED-A36D-2CD8593382CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3FFB6368-18CB-45ED-A36D-2CD8593382CB}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{3FFB6368-18CB-45ED-A36D-2CD8593382CB}.Debug|x64.Build.0 = Debug|Any CPU
+		{3FFB6368-18CB-45ED-A36D-2CD8593382CB}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{3FFB6368-18CB-45ED-A36D-2CD8593382CB}.Debug|x86.Build.0 = Debug|Any CPU
+		{3FFB6368-18CB-45ED-A36D-2CD8593382CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3FFB6368-18CB-45ED-A36D-2CD8593382CB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3FFB6368-18CB-45ED-A36D-2CD8593382CB}.Release|x64.ActiveCfg = Release|Any CPU
+		{3FFB6368-18CB-45ED-A36D-2CD8593382CB}.Release|x64.Build.0 = Release|Any CPU
+		{3FFB6368-18CB-45ED-A36D-2CD8593382CB}.Release|x86.ActiveCfg = Release|Any CPU
+		{3FFB6368-18CB-45ED-A36D-2CD8593382CB}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

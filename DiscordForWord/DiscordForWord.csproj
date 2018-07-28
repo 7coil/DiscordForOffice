@@ -21,11 +21,11 @@
     <ProjectTypeGuids>{BAA0C2D2-18E2-41B9-852F-F413020CAA33};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{8F6EAF0E-C731-4D94-85A2-DF6BD6F671F4}</ProjectGuid>
+    <ProjectGuid>{0FF18081-EA7B-43E5-BE2B-10D50A479C15}</ProjectGuid>
     <OutputType>Library</OutputType>
     <NoStandardLibraries>false</NoStandardLibraries>
-    <RootNamespace>DiscordForPowerPoint</RootNamespace>
-    <AssemblyName>DiscordForPowerPoint</AssemblyName>
+    <RootNamespace>DiscordForWord</RootNamespace>
+    <AssemblyName>DiscordForWord</AssemblyName>
     <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <DefineConstants>VSTO40</DefineConstants>
     <IsWebBootstrapper>True</IsWebBootstrapper>
@@ -36,13 +36,13 @@
     <ApplicationVersion>1.0.2.1</ApplicationVersion>
     <AutoIncrementApplicationRevision>true</AutoIncrementApplicationRevision>
     <UpdateEnabled>true</UpdateEnabled>
-    <UpdateInterval>0</UpdateInterval>
+    <UpdateInterval>7</UpdateInterval>
     <UpdateIntervalUnits>days</UpdateIntervalUnits>
-    <ProductName>Discord For PowerPoint</ProductName>
-    <PublisherName>Terminal.ink</PublisherName>
-    <SupportUrl>https://discord.gg/8uC6aKZ</SupportUrl>
-    <FriendlyName>Discord For Microsoft PowerPoint</FriendlyName>
-    <OfficeApplicationDescription>Show your boss you have a legitimate reason to use Discord in your workspace!</OfficeApplicationDescription>
+    <ProductName>DiscordForWord</ProductName>
+    <PublisherName />
+    <SupportUrl />
+    <FriendlyName>DiscordForWord</FriendlyName>
+    <OfficeApplicationDescription />
     <LoadBehavior>3</LoadBehavior>
   </PropertyGroup>
   <ItemGroup>
@@ -67,7 +67,7 @@
       OfficeApplication
         Add-in host application
     -->
-    <OfficeApplication>PowerPoint</OfficeApplication>
+    <OfficeApplication>Word</OfficeApplication>
   </PropertyGroup>
   <!--
     This section defines properties that are set when the "Debug" configuration is selected.
@@ -146,6 +146,9 @@
     <Reference Include="Microsoft.Office.Tools.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <Private>False</Private>
     </Reference>
+    <Reference Include="Microsoft.Office.Tools.Word, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Office.Tools.Common.v4.0.Utilities, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
@@ -157,7 +160,7 @@
       <Private>False</Private>
       <EmbedInteropTypes>true</EmbedInteropTypes>
     </Reference>
-    <Reference Include="Microsoft.Office.Interop.PowerPoint, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
+    <Reference Include="Microsoft.Office.Interop.Word, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
       <Private>False</Private>
       <EmbedInteropTypes>true</EmbedInteropTypes>
     </Reference>
@@ -188,8 +191,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="magic.pfx" />
-    <None Include="packages.config" />
+    <None Include="DiscordForWord_TemporaryKey.pfx" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -219,9 +221,6 @@
       <Name>Shared</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="NewFolder1\" />
-  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
@@ -230,10 +229,10 @@
     <SignManifests>true</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>magic.pfx</ManifestKeyFile>
+    <ManifestKeyFile>DiscordForWord_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>3E2F0ED16F484B95920C306A97BAB22B3AC268D1</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>D4807E41EEC32733C0F45B188EA2DFEF799F3B7B</ManifestCertificateThumbprint>
   </PropertyGroup>
   <!-- Include the build rules for a C# project. -->
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
@@ -243,9 +242,9 @@
   <ProjectExtensions>
     <VisualStudio>
       <FlavorProperties GUID="{BAA0C2D2-18E2-41B9-852F-F413020CAA33}">
-        <ProjectProperties HostName="PowerPoint" HostPackage="{29A7B9D7-A7F1-4328-8EF0-6B2D1A56B2C1}" OfficeVersion="15.0" VstxVersion="4.0" ApplicationType="PowerPoint" Language="cs" TemplatesPath="" DebugInfoExeName="#Software\Microsoft\Office\15.0\PowerPoint\InstallRoot\Path#powerpnt.exe" AddItemTemplatesGuid="{51063C3A-E220-4D12-8922-BDA915ACD783}" />
-        <Host Name="PowerPoint" GeneratedCodeNamespace="DiscordForPowerPoint" PublishedHash="69C324AB27932AA2FBF2B7EA72250886FF164DE6" IconIndex="0">
-          <HostItem Name="ThisAddIn" Code="ThisAddIn.cs" CanonicalName="AddIn" PublishedHash="D4910942C8AA8C76D72CE1ED29E45B66599E6D38" CanActivate="false" IconIndex="1" Blueprint="ThisAddIn.Designer.xml" GeneratedCode="ThisAddIn.Designer.cs" />
+        <ProjectProperties HostName="Word" HostPackage="{29A7B9D7-A7F1-4328-8EF0-6B2D1A56B2C1}" OfficeVersion="15.0" VstxVersion="4.0" ApplicationType="Word" Language="cs" TemplatesPath="" DebugInfoExeName="#Software\Microsoft\Office\15.0\Word\InstallRoot\Path#WINWORD.EXE" DebugInfoCommandLine="/x" AddItemTemplatesGuid="{51063C3A-E220-4D12-8922-BDA915ACD783}" />
+        <Host Name="Word" GeneratedCodeNamespace="DiscordForWord" PublishedHash="69C324AB27932AA2FBF2B7EA72250886FF164DE6" IconIndex="0">
+          <HostItem Name="ThisAddIn" Code="ThisAddIn.cs" CanonicalName="AddIn" CanActivate="false" IconIndex="1" Blueprint="ThisAddIn.Designer.xml" GeneratedCode="ThisAddIn.Designer.cs" PublishedHash="24B3687A5B415EB23ECA09C05327801951AFB7AB" />
         </Host>
       </FlavorProperties>
     </VisualStudio>

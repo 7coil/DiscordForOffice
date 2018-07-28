@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Excel = Microsoft.Office.Interop.Excel;
 using System.Diagnostics;
 using DiscordRPC;
@@ -10,41 +9,12 @@ namespace DiscordForExcel
 {
     public partial class ThisAddIn
     {
-        private static IDictionary<int, string> OfficeVersions = new Dictionary<int, string>() {
-            {6, "4.x"},
-            {7, "95"},
-            {8, "97"},
-            {9, "2000"},
-            {10, "XP"},
-            {11, "2003"},
-            {12, "2007"},
-            {14, "2010"},
-            {15, "2013"},
-            {16, "2016"},
-            {17, "2017"}
-        };
-
         public DiscordRpcClient client;
-        private static int DiscordPipe = -1;
-        private static string ClientID = "470239659591598091";
-        private static LogLevel DiscordLogLevel = LogLevel.Info;
-
-        private static RichPresence presence = new RichPresence()
-        {
-            Details = "No File Open",
-            State = "Welcome Screen",
-            Assets = new Assets()
-            {
-                LargeImageKey = "excel_welcome",
-                LargeImageText = "Microsoft Excel " + OfficeVersions[Process.GetCurrentProcess().MainModule.FileVersionInfo.ProductMajorPart],
-                SmallImageKey = "excel"
-            }
-        };
+        private static RichPresence presence = Shared.Shared.getNewPresence("excel");
 
         private void ThisAddIn_Startup(object sender, System.EventArgs e)
         {
-            client = new DiscordRpcClient(ClientID, true, DiscordPipe);
-            client.Logger = new DiscordRPC.Logging.ConsoleLogger() { Level = DiscordLogLevel, Coloured = true };
+            client = new DiscordRpcClient(Shared.Shared.getString("discordID"), true, -1);
             client.Initialize();
             client.SetPresence(presence);
 
@@ -58,8 +28,8 @@ namespace DiscordForExcel
 
         private void Application_WorkbookOpen(Workbook Wb)
         {
-            presence.Details = Wb.Name;
-            presence.State = "Editing";
+            presence.Details = Application.ActiveWorkbook.Name;
+            presence.State = Shared.Shared.getString("editing");
             presence.Assets.LargeImageKey = "excel_editing";
 
             client.SetPresence(presence);
@@ -67,17 +37,16 @@ namespace DiscordForExcel
 
         private void Application_WorkbookDeactivate(Workbook Wb)
         {
-            presence = new RichPresence()
+            if (Application.Workbooks.Count == 1)
             {
-                Details = "No File Open",
-                State = "No File Open",
-                Assets = new Assets()
-                {
-                    LargeImageKey = "excel_nothing",
-                    LargeImageText = "Microsoft Excel " + OfficeVersions[Process.GetCurrentProcess().MainModule.FileVersionInfo.ProductMajorPart],
-                    SmallImageKey = "excel"
-                }
-            };
+                presence.Details = Shared.Shared.getString("noFile");
+                presence.State = null;
+                presence.Assets.LargeImageKey = "excel_nothing";
+            }
+            else
+            {
+                presence.Details = Application.ActiveWorkbook.Name;
+            }
 
             client.SetPresence(presence);
         }

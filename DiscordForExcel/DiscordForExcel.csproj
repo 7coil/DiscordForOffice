@@ -33,7 +33,7 @@
     <PublishUrl>publish\</PublishUrl>
     <InstallUrl>https://office.terminal.ink/</InstallUrl>
     <TargetCulture>en</TargetCulture>
-    <ApplicationVersion>1.0.0.10</ApplicationVersion>
+    <ApplicationVersion>1.0.2.1</ApplicationVersion>
     <AutoIncrementApplicationRevision>true</AutoIncrementApplicationRevision>
     <UpdateEnabled>true</UpdateEnabled>
     <UpdateInterval>7</UpdateInterval>
@@ -191,7 +191,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="DiscordForExcel_TemporaryKey.pfx" />
     <None Include="magic.pfx" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -216,6 +215,10 @@
     <ProjectReference Include="..\discord-rpc-csharp\Discord RPC\DiscordRPC.csproj">
       <Project>{819D20D6-8D88-45C1-A4D2-AA21F10ABD19}</Project>
       <Name>DiscordRPC</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Shared\Shared.csproj">
+      <Project>{3FFB6368-18CB-45ED-A36D-2CD8593382CB}</Project>
+      <Name>Shared</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

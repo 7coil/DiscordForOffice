@@ -10,41 +10,12 @@ namespace DiscordForPowerPoint
 {
     public partial class ThisAddIn
     {
-        private static IDictionary<int, string> OfficeVersions = new Dictionary<int, string>() {
-            {6, "4.x"},
-            {7, "95"},
-            {8, "97"},
-            {9, "2000"},
-            {10, "XP"},
-            {11, "2003"},
-            {12, "2007"},
-            {14, "2010"},
-            {15, "2013"},
-            {16, "2016"},
-            {17, "2017"}
-        };
-
         public DiscordRpcClient client;
-        private static int DiscordPipe = -1;
-        private static string ClientID = "470239659591598091";
-        private static LogLevel DiscordLogLevel = LogLevel.Info;
-
-        private static RichPresence presence = new RichPresence()
-        {
-            Details = "No File Open",
-            State = "Welcome Screen",
-            Assets = new Assets()
-            {
-                LargeImageKey = "welcome",
-                LargeImageText = "Microsoft PowerPoint " + OfficeVersions[Process.GetCurrentProcess().MainModule.FileVersionInfo.ProductMajorPart],
-                SmallImageKey = "powerpoint"
-            }
-        };
+        private static RichPresence presence = Shared.Shared.getNewPresence("powerpoint");
 
         private void ThisAddIn_Startup(object sender, System.EventArgs e)
         {
-            client = new DiscordRpcClient(ClientID, true, DiscordPipe);
-            client.Logger = new DiscordRPC.Logging.ConsoleLogger() { Level = DiscordLogLevel, Coloured = true };
+            client = new DiscordRpcClient(Shared.Shared.getString("discordID"), true, -1);
             client.Initialize();
             client.SetPresence(presence);
 
@@ -107,7 +78,7 @@ namespace DiscordForPowerPoint
             if (SldRange.Count > 0)
             {
                 presence.Details = SldRange.Application.ActivePresentation.Name;
-                presence.State = "Editing";
+                presence.State = Shared.Shared.getString("editing");
                 presence.Assets.LargeImageKey = "editing";
                 presence.Party = new Party()
                 {
@@ -124,9 +95,8 @@ namespace DiscordForPowerPoint
             // There's only one presentation left - the current one
             if (Application.Presentations.Count == 1)
             {
-                Debug.Print("Presentation Closed");
-                presence.Details = "No File Open";
-                presence.State = "No File Open";
+                presence.Details = Shared.Shared.getString("noFile");
+                presence.State = null;
                 presence.Party = null;
                 presence.Assets.LargeImageKey = "nothing";
             }
@@ -141,7 +111,7 @@ namespace DiscordForPowerPoint
         public void Application_AfterPresentationOpenEvent(Presentation Pres)
         {
             presence.Details = Pres.Name;
-            presence.State = "Editing";
+            presence.State = Shared.Shared.getString("editing");
             presence.Assets.LargeImageKey = "editing";
 
             // Slide selection is also triggered - Don't need to set presence
@@ -150,7 +120,7 @@ namespace DiscordForPowerPoint
         public void Application_SlideShowNextSlide(SlideShowWindow Wn)
         {
             presence.Details = Wn.Presentation.Name;
-            presence.State = "Presenting";
+            presence.State = Shared.Shared.getString("presenting");
             presence.Assets.LargeImageKey = "present";
             presence.Party = new Party()
             {
