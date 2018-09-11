@@ -28,6 +28,7 @@ namespace Shared
         {
             {"discordID", "470239659591598091" },
             {"noFile", "No File Open" },
+            {"tabOut", "Not Active"},
             {"welcome", "Welcome Screen" },
             {"editing", "Editing File" },
             {"presenting", "Presenting" },

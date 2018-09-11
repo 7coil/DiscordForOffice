@@ -25,6 +25,8 @@ namespace DiscordForWord
 
             this.Application.WindowDeactivate += new ApplicationEvents4_WindowDeactivateEventHandler(
                 Application_WindowDeactivate);
+            this.Application.WindowActivate += new ApplicationEvents4_WindowActivateEventHandler(
+                Application_WindowActivate);
             this.Application.DocumentOpen += new ApplicationEvents4_DocumentOpenEventHandler(
                 Application_DocumentOpen);
             ((Word.ApplicationEvents4_Event)this.Application).NewDocument += new ApplicationEvents4_NewDocumentEventHandler(
@@ -53,7 +55,7 @@ namespace DiscordForWord
         {
             if (Application.Documents.Count == 1)
             {
-                presence.Details = Shared.Shared.getString("noFile");
+                presence.Details = Shared.Shared.getString("tabOut");
                 presence.State = null;
                 presence.Assets.LargeImageKey = "word_nothing";
             }
@@ -63,6 +65,11 @@ namespace DiscordForWord
             }
 
             client.SetPresence(presence);
+        }
+
+        private void Application_WindowActivate(Word.Document doc, Window wn)
+        {
+            Application_DocumentOpen(doc);
         }
 
         private void ThisAddIn_Shutdown(object sender, System.EventArgs e)
