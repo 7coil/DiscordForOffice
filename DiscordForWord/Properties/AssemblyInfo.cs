@@ -6,7 +6,7 @@ using System.Security;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("DiscordForWord")]
+[assembly: AssemblyTitle("Discord For Word")]
 [assembly: AssemblyDescription("The Microsoft Word to Discord Rich Presence Plugin")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Terminal.ink")]

@@ -28,7 +28,16 @@ namespace DiscordForWord
             this.Application.DocumentOpen += new ApplicationEvents4_DocumentOpenEventHandler(
                 Application_DocumentOpen);
             ((Word.ApplicationEvents4_Event)this.Application).NewDocument += new ApplicationEvents4_NewDocumentEventHandler(
-                Application_NewDocument);
+                Application_DocumentOpen);
+
+            try
+            {
+                Word.Document doc = this.Application.ActiveDocument;
+                Application_DocumentOpen(doc);
+            } catch
+            {
+                // Nothing!
+            }
         }
 
         private void Application_DocumentOpen(Word.Document doc)
@@ -52,15 +61,6 @@ namespace DiscordForWord
             {
                 presence.Details = Application.ActiveDocument.Name;
             }
-
-            client.SetPresence(presence);
-        }
-
-        private void Application_NewDocument(Word.Document doc)
-        {
-            presence.Details = Application.ActiveDocument.Name;
-            presence.State = Shared.Shared.getString("editing");
-            presence.Assets.LargeImageKey = "word_editing";
 
             client.SetPresence(presence);
         }
