@@ -1,0 +1,138 @@
+<html>
+  <head>
+    <title>Fullscreen</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+    <link href="https://modesta.alexflipnote.xyz/css/modesta.min.css" type="text/css" rel="stylesheet">
+    <link href="https://modesta.alexflipnote.xyz/css/twemoji.min.css" type="text/css" rel="stylesheet">
+    <link href="https://modesta.alexflipnote.xyz/css/blobcat.min.css" type="text/css" rel="stylesheet">
+    <style>
+      #center {
+        position: absolute;
+        width: 100vw;
+        top: 30vh;
+        left: 0;
+        transform: unset;
+        -webkit-transform: unset;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="fullscreen">
+      <div class="background" style="background-image: url(&quot;https://alexflipnote.xyz/assets/images/background.jpg&quot;); opacity: 1;"></div>
+      <div id="center" class="center-object center">
+        <section class="me">
+          <img draggable="false" src="assets/img/whatthehellisthis.png">
+          <h1 class="title">Discord For Microsoft Office</h1>
+        </section>
+        <div class="buttons" id="switchbutton">
+          <a href="#downloads" class="btn animation discord">Install</a>
+          <a href="https://github.com/terminal/discordforoffice" class="btn animation github">GitHub</a>
+          <a href="https://discord.gg/8uC6aKZ" class="btn animation midnight-blue">Technical Support</a>
+        </div>
+        <p><small>
+          Both Discord and Microsoft Office are not affiliated with Terminal.ink
+        </small></p>
+      </div>
+    </section>
+    <div class="arrow bounce"></div>
+    <section class="container" id="downloads">
+      <div class="box-container primary row">
+        <div class="one-full column">
+          <h1>
+            Installation
+          </h1>
+        </div>
+        <div class="one-full column">
+          <h3>Step 1: Add <code>office.terminal.ink</code> to your trusted sites</h3>
+          <p>
+            This sounds really sketchy, but it's required, as we don't have enough money to pay for a code signing certificate.
+            If you don't trust us, build the code yourself.
+          </p>
+          <ol>
+            <li>Open the <b>Start Menu</b>, and open <b>Internet Properties</b></li>
+            <li>In the <b>Security Tab</b>, click on <b>Trusted Sites</b>, and click the <b>Sites</b> button</li>
+            <li>Add <i><code>https://office.terminal.ink</code></i> to the list of sites, then <b>Close</b> and then click <b>OK</b></li>
+          </ol>
+          <img src="assets/img/howto.gif">
+          <h3>Step 2: Download and install DiscordForOffice</h3>
+          <p>DiscordForOffice may automatically search for updates.</p>
+          <a class="btn clouds black-text" href="https://github.com/Terminal/DiscordForOffice/releases">Download DiscordForOffice</a>
+          <a class="btn secondary" href="#licence">Licence</a>
+        </div>
+      </div>
+    </section>
+    <section class="container" id="uninstall">
+      <div class="box-container primary row">
+        <div class="one-full column">
+          <h2>
+            <i class="emoji blobcatnotlikethis"></i>
+            Uninstallation
+          </h2>
+        </div>
+        <div class="one-full column">
+          <ol>
+            <li>Open Control Panel</li>
+            <li>Click <b>Uninstall a program</b></li>
+            <li>Find and uninstall products</li>
+          </ol>
+          <p>You will need to uninstall:</p>
+          <div class="table-container">
+            <table class="box-shadow white-dropshadow black-text">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Publisher</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Discord For PowerPoint</td>
+                  <td>Terminal.ink</td>
+                </tr>
+                <tr>
+                  <td>Discord For Word</td>
+                  <td>Terminal.ink</td>
+                </tr>
+                <tr>
+                  <td>Discord For Excel</td>
+                  <td>Terminal.ink</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="container" id="licence">
+      <div class="box-container primary row">
+        <div class="one-full column">
+          <h3>Licence</h3>
+          <pre><code>
+MIT License
+
+Copyright (c) 2018 Terminal.ink
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+          </code></pre>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
