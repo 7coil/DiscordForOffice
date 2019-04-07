@@ -34,11 +34,13 @@ namespace DiscordForWord
 
             try
             {
+                // Use the currently opened document
                 Word.Document doc = this.Application.ActiveDocument;
                 Application_DocumentOpen(doc);
             } catch
             {
-                // Nothing!
+                // Use the default presence when there is no current document
+                
             }
         }
 
