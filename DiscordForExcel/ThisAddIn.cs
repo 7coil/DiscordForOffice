@@ -14,7 +14,7 @@ namespace DiscordForExcel
 
         private void ThisAddIn_Startup(object sender, System.EventArgs e)
         {
-            client = new DiscordRpcClient(Shared.Shared.getString("discordID"), true, -1);
+            client = new DiscordRpcClient(Shared.Shared.getString("discordID"));
             client.Initialize();
             client.SetPresence(presence);
 

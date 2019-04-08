@@ -15,7 +15,7 @@ namespace DiscordForPowerPoint
 
         private void ThisAddIn_Startup(object sender, System.EventArgs e)
         {
-            client = new DiscordRpcClient(Shared.Shared.getString("discordID"), true, -1);
+            client = new DiscordRpcClient(Shared.Shared.getString("discordID"));
             client.Initialize();
             client.SetPresence(presence);
 
@@ -99,8 +99,7 @@ namespace DiscordForPowerPoint
                 presence.State = null;
                 presence.Party = null;
                 presence.Assets.LargeImageKey = "nothing";
-            }
-            else
+            } else
             {
                 presence.Details = Application.ActivePresentation.Name;
             }

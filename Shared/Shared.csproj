@@ -44,9 +44,13 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\discord-rpc-csharp\Discord RPC\DiscordRPC.csproj">
-      <Project>{819D20D6-8D88-45C1-A4D2-AA21F10ABD19}</Project>
+    <ProjectReference Include="..\discord-rpc-csharp\DiscordRPC\DiscordRPC.csproj">
+      <Project>{819d20d6-8d88-45c1-a4d2-aa21f10abd19}</Project>
       <Name>DiscordRPC</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ObjectDump\ObjectDumper.csproj">
+      <Project>{19b218bd-2524-4c47-91d7-8aa6571338a9}</Project>
+      <Name>ObjectDumper</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -25,7 +25,7 @@
     <OutputType>Library</OutputType>
     <NoStandardLibraries>false</NoStandardLibraries>
     <RootNamespace>DiscordForWord</RootNamespace>
-    <AssemblyName>Discord For Word</AssemblyName>
+    <AssemblyName>DiscordForWord</AssemblyName>
     <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <DefineConstants>VSTO40</DefineConstants>
     <IsWebBootstrapper>True</IsWebBootstrapper>
@@ -33,7 +33,7 @@
     <PublishUrl>publish\</PublishUrl>
     <InstallUrl>https://office.terminal.ink/</InstallUrl>
     <TargetCulture>en</TargetCulture>
-    <ApplicationVersion>1.0.2.5</ApplicationVersion>
+    <ApplicationVersion>1.0.2.7</ApplicationVersion>
     <AutoIncrementApplicationRevision>true</AutoIncrementApplicationRevision>
     <UpdateEnabled>true</UpdateEnabled>
     <UpdateInterval>0</UpdateInterval>
@@ -213,7 +213,7 @@
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\discord-rpc-csharp\Discord RPC\DiscordRPC.csproj">
+    <ProjectReference Include="..\discord-rpc-csharp\DiscordRPC\DiscordRPC.csproj">
       <Project>{819D20D6-8D88-45C1-A4D2-AA21F10ABD19}</Project>
       <Name>DiscordRPC</Name>
     </ProjectReference>

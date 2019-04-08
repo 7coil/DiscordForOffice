@@ -41,6 +41,7 @@ namespace Shared
         public static String getVersion()
         {
             int version = Process.GetCurrentProcess().MainModule.FileVersionInfo.ProductMajorPart;
+            Debug.WriteLine(ObjectDumper.Dump(Process.GetCurrentProcess().MainModule.FileVersionInfo));
             if (OfficeVersions.ContainsKey(version))
             {
                 return OfficeVersions[version];
