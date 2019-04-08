@@ -88,7 +88,7 @@ namespace DiscordForWord
             Range range = Application.ActiveDocument.Content;
 
             presence.Details = Application.ActiveDocument.Name;
-            presence.State = Shared.Shared.getString("editing");
+            presence.State = Shared.Shared.getString("editingPage");
             presence.Assets.LargeImageKey = "word_editing";
             presence.Party = new Party()
             {

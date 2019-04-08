@@ -110,7 +110,7 @@ namespace DiscordForPowerPoint
         public void Application_AfterPresentationOpenEvent(Presentation Pres)
         {
             presence.Details = Pres.Name;
-            presence.State = Shared.Shared.getString("editing");
+            presence.State = Shared.Shared.getString("editingSlide");
             presence.Assets.LargeImageKey = "editing";
 
             // Slide selection is also triggered - Don't need to set presence

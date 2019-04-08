@@ -31,10 +31,13 @@ namespace Shared
             {"tabOut", "Not Active"},
             {"welcome", "Welcome Screen" },
             {"editing", "Editing File" },
+            {"editingSlide", "Editing Slide" },
+            {"editingPage", "Editing Page" },
             {"presenting", "Presenting" },
             {"excel", "Microsoft Excel" },
             {"powerpoint", "Microsoft PowerPoint" },
             {"word", "Microsoft Word" },
+            {"unknown_version", "[Unknown Version]" },
             {"unknown_key", "[Unknown]" }
         };
 
@@ -47,7 +50,7 @@ namespace Shared
                 return OfficeVersions[version];
             } else
             {
-                return getString("unknown_key");
+                return getString("unknown_version");
             }
         }
 
