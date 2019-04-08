@@ -64,7 +64,7 @@ namespace DiscordForWord
                 Application_WindowSelectionChange(Application.Selection);
             } else
             {
-                presence.Details = Shared.Shared.getString("noFile");
+                presence.Details = Shared.Shared.getString("tabOut");
                 presence.State = null;
                 presence.Party = null;
                 presence.Assets.LargeImageKey = "word_nothing";
