@@ -3,6 +3,9 @@ Show the world you care about white collar work with the Discord RPC plugin for 
 
 [It's probably best for your sanity to just download it here](https://github.com/Terminal/DiscordForOffice/releases)
 
+## Rate
+[Rate us on the Terminal.ink Discord Apps Marketplace](https://discordapps.dev/en-GB/rpc/470239659591598091)
+
 ## Gif
 ![Best PowerPoint Demo](https://office.terminal.ink/assets/img/PowerPointDemo.gif)
 
