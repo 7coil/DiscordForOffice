@@ -191,6 +191,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="DiscordForExcel_TemporaryKey.pfx" />
     <None Include="magic.pfx" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -229,10 +230,10 @@
     <SignManifests>true</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>magic.pfx</ManifestKeyFile>
+    <ManifestKeyFile>DiscordForExcel_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>3E2F0ED16F484B95920C306A97BAB22B3AC268D1</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>D4F3F3EAB188FDF9EEFE7C2A7687FD3D81821D83</ManifestCertificateThumbprint>
   </PropertyGroup>
   <!-- Include the build rules for a C# project. -->
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

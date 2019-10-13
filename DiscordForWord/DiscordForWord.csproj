@@ -191,6 +191,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="DiscordForWord_1_TemporaryKey.pfx" />
     <None Include="DiscordForWord_TemporaryKey.pfx" />
     <None Include="magic.pfx" />
     <None Include="Properties\Settings.settings">
@@ -230,10 +231,10 @@
     <SignManifests>true</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>magic.pfx</ManifestKeyFile>
+    <ManifestKeyFile>DiscordForWord_1_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>3E2F0ED16F484B95920C306A97BAB22B3AC268D1</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>A87FC7B12D01B919904D04F0B045755D0CBDF7E7</ManifestCertificateThumbprint>
   </PropertyGroup>
   <!-- Include the build rules for a C# project. -->
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

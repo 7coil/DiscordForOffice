@@ -20,8 +20,7 @@ namespace Shared
             {12, "2007" },
             {14, "2010" },
             {15, "2013" },
-            {16, "2016" },
-            {17, "2017" }
+            {16, "2016 or 2019" }
         };
 
         private static IDictionary<string, string> Strings = new Dictionary<string, string>()
@@ -37,6 +36,7 @@ namespace Shared
             {"excel", "Microsoft Excel" },
             {"powerpoint", "Microsoft PowerPoint" },
             {"word", "Microsoft Word" },
+            {"outlook", "Microsoft Outlook" },
             {"unknown_version", "[Unknown Version]" },
             {"unknown_key", "[Unknown]" }
         };
