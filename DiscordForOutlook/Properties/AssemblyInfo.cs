@@ -6,11 +6,11 @@ using System.Security;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Discord for Microsoft PowerPoint")]
-[assembly: AssemblyDescription("The Microsoft PowerPoint to Discord Rich Presence Plugin")]
+[assembly: AssemblyTitle("Discord for Microsoft Outlook")]
+[assembly: AssemblyDescription("The Microsoft Outlook to Discord Rich Presence Plugin")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Terminal.ink")]
-[assembly: AssemblyProduct("DiscordForPowerPoint")]
+[assembly: AssemblyProduct("DiscordForOutlook")]
 [assembly: AssemblyCopyright("Copyright © Terminal.ink 2019")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -21,7 +21,7 @@ using System.Security;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("f9de33df-7e96-45c0-be95-a723ee201faf")]
+[assembly: Guid("bf8cb63f-5265-4c42-8d0b-b228f43a4a2e")]
 
 // Version information for an assembly consists of the following four values:
 //

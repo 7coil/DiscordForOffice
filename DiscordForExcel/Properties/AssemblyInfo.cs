@@ -6,12 +6,12 @@ using System.Security;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("DiscordForExcel")]
+[assembly: AssemblyTitle("Discord for Microsoft Excel")]
 [assembly: AssemblyDescription("The Microsoft Excel to Discord Rich Presence Plugin")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Terminal.ink")]
 [assembly: AssemblyProduct("DiscordForExcel")]
-[assembly: AssemblyCopyright("Copyright © Terminal.ink 2018")]
+[assembly: AssemblyCopyright("Copyright © Terminal.ink 2019")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

@@ -26,14 +26,15 @@
     <NoStandardLibraries>false</NoStandardLibraries>
     <RootNamespace>DiscordForExcel</RootNamespace>
     <AssemblyName>DiscordForExcel</AssemblyName>
-    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <DefineConstants>VSTO40</DefineConstants>
     <IsWebBootstrapper>True</IsWebBootstrapper>
+    <TargetFrameworkProfile />
     <BootstrapperEnabled>true</BootstrapperEnabled>
     <PublishUrl>publish\</PublishUrl>
     <InstallUrl>https://office.terminal.ink/</InstallUrl>
     <TargetCulture>en</TargetCulture>
-    <ApplicationVersion>1.0.2.2</ApplicationVersion>
+    <ApplicationVersion>1.0.2.3</ApplicationVersion>
     <AutoIncrementApplicationRevision>true</AutoIncrementApplicationRevision>
     <UpdateEnabled>true</UpdateEnabled>
     <UpdateInterval>7</UpdateInterval>
@@ -46,9 +47,9 @@
     <LoadBehavior>3</LoadBehavior>
   </PropertyGroup>
   <ItemGroup>
-    <BootstrapperPackage Include=".NETFramework,Version=v4.7.1">
+    <BootstrapperPackage Include=".NETFramework,Version=v4.8">
       <Visible>False</Visible>
-      <ProductName>Microsoft .NET Framework 4.7.1 %28x86 and x64%29</ProductName>
+      <ProductName>Microsoft .NET Framework 4.8 %28x86 and x64%29</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
     <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
@@ -190,6 +191,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="DiscordForExcel_TemporaryKey.pfx" />
     <None Include="magic.pfx" />
@@ -200,6 +202,7 @@
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="ThisAddIn.cs">
       <SubType>Code</SubType>
@@ -245,7 +248,7 @@
       <FlavorProperties GUID="{BAA0C2D2-18E2-41B9-852F-F413020CAA33}">
         <ProjectProperties HostName="Excel" HostPackage="{29A7B9D7-A7F1-4328-8EF0-6B2D1A56B2C1}" OfficeVersion="15.0" VstxVersion="4.0" ApplicationType="Excel" Language="cs" TemplatesPath="" DebugInfoExeName="#Software\Microsoft\Office\16.0\Excel\InstallRoot\Path#excel.exe" DebugInfoCommandLine="/x" AddItemTemplatesGuid="{51063C3A-E220-4D12-8922-BDA915ACD783}" />
         <Host Name="Excel" GeneratedCodeNamespace="DiscordForExcel" PublishedHash="69C324AB27932AA2FBF2B7EA72250886FF164DE6" IconIndex="0">
-          <HostItem Name="ThisAddIn" Code="ThisAddIn.cs" CanonicalName="AddIn" PublishedHash="90F6B41B90E2AC669DC3BA682D1DBBFB2A3B587E" CanActivate="false" IconIndex="1" Blueprint="ThisAddIn.Designer.xml" GeneratedCode="ThisAddIn.Designer.cs" />
+          <HostItem Name="ThisAddIn" Code="ThisAddIn.cs" CanonicalName="AddIn" PublishedHash="36DFC75D2D3A2CEF494F7EC36B94FE0D393DDF88" CanActivate="false" IconIndex="1" Blueprint="ThisAddIn.Designer.xml" GeneratedCode="ThisAddIn.Designer.cs" />
         </Host>
       </FlavorProperties>
     </VisualStudio>
