@@ -13,7 +13,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shared", "Shared\Shared.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiscordRPC", "discord-rpc-csharp\DiscordRPC\DiscordRPC.csproj", "{819D20D6-8D88-45C1-A4D2-AA21F10ABD19}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ObjectDumper", "ObjectDump\ObjectDumper.csproj", "{19B218BD-2524-4C47-91D7-8AA6571338A9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ObjectDumper", "ObjectDump\ObjectDumper.csproj", "{19B218BD-2524-4C47-91D7-8AA6571338A9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
