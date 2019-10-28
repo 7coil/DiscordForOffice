@@ -53,7 +53,6 @@ namespace Shared
             {
                 // Ugly temporary work-around due to Microsoft assigning version 16 to both Office 2016 and 2019 
                 var fileName = Process.GetCurrentProcess().MainModule.FileVersionInfo.FileName;
-                var processes = Process.GetProcesses(); ;
 
                 if (fileName.Contains("2016"))
                 {
