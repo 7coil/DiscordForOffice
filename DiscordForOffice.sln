@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27703.2042
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29306.81
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiscordForPowerPoint", "DiscordForPowerPoint\DiscordForPowerPoint.csproj", "{8F6EAF0E-C731-4D94-85A2-DF6BD6F671F4}"
 EndProject
@@ -20,6 +20,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiscordForOutlook", "Discor
 		{3FFB6368-18CB-45ED-A36D-2CD8593382CB} = {3FFB6368-18CB-45ED-A36D-2CD8593382CB}
 		{819D20D6-8D88-45C1-A4D2-AA21F10ABD19} = {819D20D6-8D88-45C1-A4D2-AA21F10ABD19}
 	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{DD6D5F59-3B56-401F-8732-7F11ADDFCC75}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shared.Tests", "Tests\Shared.Tests\Shared.Tests.csproj", "{6F113391-600C-41B9-9D56-D1FE92700C33}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -160,9 +164,30 @@ Global
 		{02B86A9E-53DA-428D-89FA-014BCD1CC26E}.Release|x64.Build.0 = Release|Any CPU
 		{02B86A9E-53DA-428D-89FA-014BCD1CC26E}.Release|x86.ActiveCfg = Release|Any CPU
 		{02B86A9E-53DA-428D-89FA-014BCD1CC26E}.Release|x86.Build.0 = Release|Any CPU
+		{6F113391-600C-41B9-9D56-D1FE92700C33}.Debug Unity|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F113391-600C-41B9-9D56-D1FE92700C33}.Debug Unity|Any CPU.Build.0 = Debug|Any CPU
+		{6F113391-600C-41B9-9D56-D1FE92700C33}.Debug Unity|x64.ActiveCfg = Debug|Any CPU
+		{6F113391-600C-41B9-9D56-D1FE92700C33}.Debug Unity|x64.Build.0 = Debug|Any CPU
+		{6F113391-600C-41B9-9D56-D1FE92700C33}.Debug Unity|x86.ActiveCfg = Debug|Any CPU
+		{6F113391-600C-41B9-9D56-D1FE92700C33}.Debug Unity|x86.Build.0 = Debug|Any CPU
+		{6F113391-600C-41B9-9D56-D1FE92700C33}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F113391-600C-41B9-9D56-D1FE92700C33}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F113391-600C-41B9-9D56-D1FE92700C33}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{6F113391-600C-41B9-9D56-D1FE92700C33}.Debug|x64.Build.0 = Debug|Any CPU
+		{6F113391-600C-41B9-9D56-D1FE92700C33}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{6F113391-600C-41B9-9D56-D1FE92700C33}.Debug|x86.Build.0 = Debug|Any CPU
+		{6F113391-600C-41B9-9D56-D1FE92700C33}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F113391-600C-41B9-9D56-D1FE92700C33}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F113391-600C-41B9-9D56-D1FE92700C33}.Release|x64.ActiveCfg = Release|Any CPU
+		{6F113391-600C-41B9-9D56-D1FE92700C33}.Release|x64.Build.0 = Release|Any CPU
+		{6F113391-600C-41B9-9D56-D1FE92700C33}.Release|x86.ActiveCfg = Release|Any CPU
+		{6F113391-600C-41B9-9D56-D1FE92700C33}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{6F113391-600C-41B9-9D56-D1FE92700C33} = {DD6D5F59-3B56-401F-8732-7F11ADDFCC75}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8AC204BF-3DB2-4730-B963-F46747F6C755}

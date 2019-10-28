@@ -20,7 +20,9 @@ namespace Shared
             {12, "2007" },
             {14, "2010" },
             {15, "2013" },
-            {16, "2016 or 2019" }
+            {16, "2016" },
+            {17, "2017" },
+            {18, "2019" }
         };
 
         private static IDictionary<string, string> Strings = new Dictionary<string, string>()
@@ -41,10 +43,32 @@ namespace Shared
             {"unknown_key", "[Unknown]" }
         };
 
-        public static String getVersion()
+        public static String GetVersion()
         {
             int version = Process.GetCurrentProcess().MainModule.FileVersionInfo.ProductMajorPart;
+
             Debug.WriteLine(ObjectDumper.Dump(Process.GetCurrentProcess().MainModule.FileVersionInfo));
+
+            if (version == 16)
+            {
+                // Ugly temporary work-around due to Microsoft assigning version 16 to both Office 2016 and 2019 
+                var fileName = Process.GetCurrentProcess().MainModule.FileVersionInfo.FileName;
+                var processes = Process.GetProcesses(); ;
+
+                if (fileName.Contains("2016"))
+                {
+                    return OfficeVersions[16];
+                }
+                else if (fileName.Contains("2017"))
+                {
+                    return OfficeVersions[17];
+                }
+                else if (fileName.Contains("2019"))
+                {
+                    return OfficeVersions[18];
+                }
+            }
+
             if (OfficeVersions.ContainsKey(version))
             {
                 return OfficeVersions[version];
@@ -74,7 +98,7 @@ namespace Shared
                 Assets = new Assets()
                 {
                     LargeImageKey = type + "_welcome",
-                    LargeImageText = getString(type) + " " + getVersion(),
+                    LargeImageText = getString(type) + " " + GetVersion(),
                     SmallImageKey = type
                 }
             };
