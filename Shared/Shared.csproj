@@ -49,10 +49,9 @@
       <Project>{819d20d6-8d88-45c1-a4d2-aa21f10abd19}</Project>
       <Name>DiscordRPC</Name>
     </ProjectReference>
-    <ProjectReference Include="..\ObjectDump\ObjectDumper.csproj">
-      <Project>{19b218bd-2524-4c47-91d7-8aa6571338a9}</Project>
-      <Name>ObjectDumper</Name>
-    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="certificate.pfx" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

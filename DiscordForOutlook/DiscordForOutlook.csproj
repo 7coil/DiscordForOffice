@@ -28,13 +28,13 @@
     <AssemblyName>DiscordForOutlook</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <DefineConstants>VSTO40</DefineConstants>
-    <IsWebBootstrapper>True</IsWebBootstrapper>
+    <IsWebBootstrapper>False</IsWebBootstrapper>
     <BootstrapperEnabled>true</BootstrapperEnabled>
-    <PublishUrl>C:\Users\Leond\Documents\Programming\DiscordForOffice-1\</PublishUrl>
-    <InstallUrl>https://office.terminal.ink/</InstallUrl>
+    <PublishUrl>publish/</PublishUrl>
+    <InstallUrl />
     <TargetCulture>en</TargetCulture>
-    <ApplicationVersion>1.0.3.2</ApplicationVersion>
-    <AutoIncrementApplicationRevision>true</AutoIncrementApplicationRevision>
+    <ApplicationVersion>1.1.0.0</ApplicationVersion>
+    <AutoIncrementApplicationRevision>false</AutoIncrementApplicationRevision>
     <UpdateEnabled>true</UpdateEnabled>
     <UpdateInterval>7</UpdateInterval>
     <UpdateIntervalUnits>days</UpdateIntervalUnits>
@@ -194,7 +194,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="DiscordForOutlook_TemporaryKey.pfx" />
+    <None Include="certificate.pfx" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -232,10 +232,10 @@
     <SignManifests>true</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>DiscordForOutlook_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>certificate.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>7197191D0B89E312DE8F3F088111FA7E3D35E4C9</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>74F93D36D8FEBDE54DE8E0FBCCD2D4ABA17E143B</ManifestCertificateThumbprint>
   </PropertyGroup>
   <!-- Include the build rules for a C# project. -->
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
@@ -252,4 +252,11 @@
       </FlavorProperties>
     </VisualStudio>
   </ProjectExtensions>
+  <PropertyGroup>
+    <PostBuildEvent>copy "$(TargetDir)$(TargetName).dll.manifest" $(SolutionDir)Installer\
+copy "$(TargetDir)$(TargetName).vsto" $(SolutionDir)Installer\
+copy "$(TargetDir)$(TargetName).dll.manifest" $(SolutionDir)Installer64\
+copy "$(TargetDir)$(TargetName).vsto" $(SolutionDir)Installer64\
+</PostBuildEvent>
+  </PropertyGroup>
 </Project>

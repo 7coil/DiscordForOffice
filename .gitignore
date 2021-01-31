@@ -266,3 +266,9 @@ packages/
 
 # Private keys yay
 cert/
+
+# The installer manifest and VSTO files
+Installer/DiscordFor*.dll.manifest
+Installer/DiscordFor*.vsto
+Installer64/DiscordFor*.dll.manifest
+Installer64/DiscordFor*.vsto

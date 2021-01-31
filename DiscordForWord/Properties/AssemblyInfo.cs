@@ -9,9 +9,9 @@ using System.Security;
 [assembly: AssemblyTitle("Discord For Microsoft Word")]
 [assembly: AssemblyDescription("The Microsoft Word to Discord Rich Presence Plugin")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Terminal.ink")]
-[assembly: AssemblyProduct("DiscordForWord")]
-[assembly: AssemblyCopyright("Copyright © Terminal.ink 2019")]
+[assembly: AssemblyCompany("Leondro Lio")]
+[assembly: AssemblyProduct("Discord For Word")]
+[assembly: AssemblyCopyright("Copyright Leondro Lio 2021")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

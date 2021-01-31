@@ -9,9 +9,9 @@ using System.Security;
 [assembly: AssemblyTitle("Discord for Microsoft Excel")]
 [assembly: AssemblyDescription("The Microsoft Excel to Discord Rich Presence Plugin")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Terminal.ink")]
-[assembly: AssemblyProduct("DiscordForExcel")]
-[assembly: AssemblyCopyright("Copyright © Terminal.ink 2019")]
+[assembly: AssemblyCompany("Leondro Lio")]
+[assembly: AssemblyProduct("Discord For Excel")]
+[assembly: AssemblyCopyright("Copyright Leondro Lio 2021")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
