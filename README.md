@@ -1,15 +1,40 @@
-# Discord for Microsoft Office
-Show the world you care about white collar work with the Discord RPC plugin for Microsoft Office 2013, 2016 (and 2019, hopefully)
+# DiscordForOffice
+Show the world how much you love presenting, spreadsheets and writing with the full DiscordForOffice suite of products
 
 - [Downloads](https://github.com/Terminal/DiscordForOffice/releases)
     - Please follow the instructions
 - [Technical Support](https://discord.gg/wHgdmf4)
 
-## Gif
-![Best PowerPoint Demo](https://office.terminal.ink/assets/img/PowerPointDemo.gif)
+## Compatability
+
+### Versions
+- Microsoft Office 2013
+- Microsoft Office 2016
+- Microsoft Office 2019
+- Microsoft Office 365
+
+### Products
+- Word
+- PowerPoint
+- Excel
+- Outlook
+    - This has no functionality yet.
+    - Give ideas at ([#20](https://github.com/7coil/DiscordForOffice/issues/20))
+
+### Not Compatible
+- Access (see [#16](https://github.com/7coil/DiscordForOffice/issues/16))
+- Publisher (see [#5](https://github.com/7coil/DiscordForOffice/issues/5))
+- OneNote (see [#9](https://github.com/7coil/DiscordForOffice/issues/9))
+- Teams (see [#19](https://github.com/7coil/DiscordForOffice/issues/19))
+- All other Microsoft products
+
+## Examples
+![PowerPoint](.github/Discord_LMpsdnmiJZ.png)
 
 ## Compiling
-1. In the "Visual Studio Installer" application, modify Visual Studio 2017 and enable the `Office/SharePoint development`, and tick all of the `.NET Framework development tools`
-2. Git pull code
-3. Git pull [`https://github.com/Lachee/discord-rpc-csharp`](https://github.com/Lachee/discord-rpc-csharp)
-4. Open the `DiscordForOffice.sln` file in Visual Studio 2017 (newer versions untested)
+1. Enable `Office/SharePoint development` in the Visual Studio Installer
+2. Make sure you have cloned the repository with submodules included
+3. Right click the solution and select the build option
+4. The installer, which is ready to distribute, can be found at the following paths
+    - `/Installer/[Release or Debug]/DiscordForOffice.msi`
+    - `/Installer64/[Release or Debug]/DiscordForOffice.msi`
