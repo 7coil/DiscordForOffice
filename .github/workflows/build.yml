@@ -18,4 +18,4 @@ jobs:
     - name: Restore dependencies
       run: nuget restore DiscordForOffice.sln
     - name: Build project
-      run: devenv DiscordForOffice.sln /Build
+      run: Start-Process -FilePath "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\Common7\IDE\devenv.exe" -ArgumentList "DiscordForOffice.sln","/Build"
