@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using PowerPoint = Microsoft.Office.Interop.PowerPoint;
-using System.Diagnostics;
 using DiscordRPC;
-using DiscordRPC.Logging;
 using Microsoft.Office.Interop.PowerPoint;
 
 namespace DiscordForPowerPoint
@@ -13,7 +9,7 @@ namespace DiscordForPowerPoint
         public DiscordRpcClient client;
         private static RichPresence presence = Shared.Shared.getNewPresence("powerpoint");
 
-        private void ThisAddIn_Startup(object sender, System.EventArgs e)
+        private void ThisAddIn_Startup(object sender, EventArgs e)
         {
             client = new DiscordRpcClient(Shared.Shared.getString("discordID"));
             client.Initialize();
@@ -21,42 +17,42 @@ namespace DiscordForPowerPoint
 
             // An event handler for when a new slide is created
             this.Application.PresentationNewSlide += 
-                new PowerPoint.EApplication_PresentationNewSlideEventHandler(
+                new EApplication_PresentationNewSlideEventHandler(
                 Application_PresentationNewSlide);
 
             // An event handler for any time a slide / slides / inbetween slides is selected
             this.Application.SlideSelectionChanged +=
-                new PowerPoint.EApplication_SlideSelectionChangedEventHandler(
+                new EApplication_SlideSelectionChangedEventHandler(
                 Application_SlideSelectionChanged);
 
             // An event handler for when a file is closed.
             // Final = Actually closed
             this.Application.PresentationCloseFinal +=
-                new PowerPoint.EApplication_PresentationCloseFinalEventHandler(
+                new EApplication_PresentationCloseFinalEventHandler(
                 Application_PresentationCloseFinal);
 
             // Event handlers for when a file is created, opened, saved, or slide show ends.
             this.Application.AfterNewPresentation +=
-                new PowerPoint.EApplication_AfterNewPresentationEventHandler(
+                new EApplication_AfterNewPresentationEventHandler(
                 Application_AfterPresentationOpenEvent);
             this.Application.AfterPresentationOpen +=
-                new PowerPoint.EApplication_AfterPresentationOpenEventHandler(
+                new EApplication_AfterPresentationOpenEventHandler(
                 Application_AfterPresentationOpenEvent);
             this.Application.PresentationSave +=
-                new PowerPoint.EApplication_PresentationSaveEventHandler(
+                new EApplication_PresentationSaveEventHandler(
                 Application_AfterPresentationOpenEvent);
             this.Application.SlideShowEnd +=
-                new PowerPoint.EApplication_SlideShowEndEventHandler(
+                new EApplication_SlideShowEndEventHandler(
                 Application_AfterPresentationOpenEvent);
 
             // An event handler for when a slide show starts, or goes onto a new slide
             this.Application.SlideShowNextSlide +=
-                new PowerPoint.EApplication_SlideShowNextSlideEventHandler(
+                new EApplication_SlideShowNextSlideEventHandler(
                 Application_SlideShowNextSlide);
         }
 
         // When Microsoft PowerPoint shuts down, delete the RPC client.
-        private void ThisAddIn_Shutdown(object sender, System.EventArgs e)
+        private void ThisAddIn_Shutdown(object sender, EventArgs e)
         {
             client.Dispose();
         }

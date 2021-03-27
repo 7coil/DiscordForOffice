@@ -1,8 +1,5 @@
-﻿using System.Collections.Generic;
-using Excel = Microsoft.Office.Interop.Excel;
-using System.Diagnostics;
+﻿using System;
 using DiscordRPC;
-using DiscordRPC.Logging;
 using Microsoft.Office.Interop.Excel;
 
 namespace DiscordForExcel
@@ -12,7 +9,7 @@ namespace DiscordForExcel
         public DiscordRpcClient client;
         private static RichPresence presence = Shared.Shared.getNewPresence("excel");
 
-        private void ThisAddIn_Startup(object sender, System.EventArgs e)
+        private void ThisAddIn_Startup(object sender, EventArgs e)
         {
             client = new DiscordRpcClient(Shared.Shared.getString("discordID"));
             client.Initialize();
@@ -22,7 +19,7 @@ namespace DiscordForExcel
                 Application_WorkbookDeactivate);
             this.Application.WorkbookOpen += new AppEvents_WorkbookOpenEventHandler(
                 Application_WorkbookOpen);
-            ((Excel.AppEvents_Event)this.Application).NewWorkbook += new AppEvents_NewWorkbookEventHandler(
+            ((AppEvents_Event)this.Application).NewWorkbook += new AppEvents_NewWorkbookEventHandler(
                 Application_WorkbookOpen);
         }
 
@@ -51,7 +48,7 @@ namespace DiscordForExcel
             client.SetPresence(presence);
         }
 
-        private void ThisAddIn_Shutdown(object sender, System.EventArgs e)
+        private void ThisAddIn_Shutdown(object sender, EventArgs e)
         {
             client.Dispose();
         }

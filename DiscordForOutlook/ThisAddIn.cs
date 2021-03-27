@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Xml.Linq;
-using Outlook = Microsoft.Office.Interop.Outlook;
-using Office = Microsoft.Office.Core;
 using DiscordRPC;
+using Microsoft.Office.Interop.Outlook;
 
 namespace DiscordForOutlook
 {
@@ -14,7 +9,7 @@ namespace DiscordForOutlook
         public DiscordRpcClient client;
         private static RichPresence presence = Shared.Shared.getNewPresence("outlook");
 
-        private void ThisAddIn_Startup(object sender, System.EventArgs e)
+        private void ThisAddIn_Startup(object sender, EventArgs e)
         {
             client = new DiscordRpcClient(Shared.Shared.getString("discordID"));
             client.Initialize();
@@ -23,7 +18,7 @@ namespace DiscordForOutlook
             presence.Assets.LargeImageKey = "outlook_info";
             client.SetPresence(presence);
 
-            ((Outlook.ApplicationEvents_11_Event)Application).Quit += new Outlook.ApplicationEvents_11_QuitEventHandler(ThisAddIn_Quit);
+            ((ApplicationEvents_11_Event)Application).Quit += new ApplicationEvents_11_QuitEventHandler(ThisAddIn_Quit);
         }
 
         private void ThisAddIn_Quit()
@@ -32,7 +27,7 @@ namespace DiscordForOutlook
             return;
         }
 
-        private void ThisAddIn_Shutdown(object sender, System.EventArgs e)
+        private void ThisAddIn_Shutdown(object sender, EventArgs e)
         {
             // Note: Outlook no longer raises this event. If you have code that 
             //    must run when Outlook shuts down, see https://go.microsoft.com/fwlink/?LinkId=506785

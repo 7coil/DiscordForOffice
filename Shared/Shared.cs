@@ -1,10 +1,6 @@
 ﻿using DiscordRPC;
-using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Shared
 {
@@ -41,7 +37,7 @@ namespace Shared
             {"unknown_key", "[Unknown]" }
         };
 
-        public static String getVersion()
+        public static string getVersion()
         {
             int version = Process.GetCurrentProcess().MainModule.FileVersionInfo.ProductMajorPart;
             if (OfficeVersions.ContainsKey(version))
@@ -53,7 +49,7 @@ namespace Shared
             }
         }
 
-        public static String getString(string key)
+        public static string getString(string key)
         {
             if (Strings.ContainsKey(key))
             {

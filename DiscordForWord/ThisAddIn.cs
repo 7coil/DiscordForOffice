@@ -1,15 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Xml.Linq;
-using Word = Microsoft.Office.Interop.Word;
-using Office = Microsoft.Office.Core;
-using Microsoft.Office.Tools.Word;
 using DiscordRPC;
-using Shared;
 using Microsoft.Office.Interop.Word;
-using System.Diagnostics;
 
 namespace DiscordForWord
 {
@@ -30,7 +21,7 @@ namespace DiscordForWord
                 Application_WindowActivate);
             this.Application.DocumentOpen += new ApplicationEvents4_DocumentOpenEventHandler(
                 Application_DocumentOpen);
-            ((Word.ApplicationEvents4_Event)this.Application).NewDocument += new ApplicationEvents4_NewDocumentEventHandler(
+            ((ApplicationEvents4_Event)this.Application).NewDocument += new ApplicationEvents4_NewDocumentEventHandler(
                 Application_DocumentOpen);
             this.Application.WindowSelectionChange += new ApplicationEvents4_WindowSelectionChangeEventHandler(
                 Application_WindowSelectionChange);
@@ -40,7 +31,7 @@ namespace DiscordForWord
             try
             {
                 // Use the currently opened document
-                Word.Document doc = this.Application.ActiveDocument;
+                Document doc = this.Application.ActiveDocument;
                 Application_DocumentOpen(doc);
             } catch
             {
@@ -57,12 +48,9 @@ namespace DiscordForWord
             }
         }
 
-        private void Application_WindowDeactivate(Word.Document doc, Window wn)
+        private void Application_WindowDeactivate(Document doc, Window wn)
         {
-            if (Application.Documents.Count > 1)
-            {
-                Application_WindowSelectionChange(Application.Selection);
-            } else
+            if (Application.Documents.Count == 1)
             {
                 presence.Details = Shared.Shared.getString("tabOut");
                 presence.State = null;
@@ -73,12 +61,31 @@ namespace DiscordForWord
             client.SetPresence(presence);
         }
 
-        private void Application_DocumentOpen(Word.Document doc)
+        private void Application_WindowClose()
         {
-            Application_WindowSelectionChange(Application.Selection);
+            if (Application.Documents.Count > 1)
+            {
+                presence.Details = "" + Application.Documents.Count;
+                Application_WindowSelectionChange(Application.Selection);
+            } else
+            {
+                presence.Details = Shared.Shared.getString("tabOut") + Application.Documents.Count;
+                presence.State = null;
+                presence.Party = null;
+                presence.Assets.LargeImageKey = "word_nothing";
+            }
+
+            client.SetPresence(presence);
         }
 
-        private void Application_WindowActivate(Word.Document doc, Window wn)
+        private void Application_DocumentOpen(Document doc)
+        {
+            Application_WindowSelectionChange(Application.Selection);
+
+            ((DocumentEvents2_Event)doc).Close += new DocumentEvents2_CloseEventHandler(Application_WindowClose);
+        }
+
+        private void Application_WindowActivate(Document doc, Window wn)
         {
             Application_WindowSelectionChange(Application.Selection);
         }
@@ -94,7 +101,7 @@ namespace DiscordForWord
             {
                 ID = Secrets.CreateFriendlySecret(new Random()),
                 Max = range.ComputeStatistics(WdStatistic.wdStatisticPages),
-                Size = (int)sel.get_Information(Microsoft.Office.Interop.Word.WdInformation.wdActiveEndPageNumber)
+                Size = (int)sel.get_Information(WdInformation.wdActiveEndPageNumber)
             };
 
             client.SetPresence(presence);
