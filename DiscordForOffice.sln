@@ -16,10 +16,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiscordForOutlook", "Discor
 		{3FFB6368-18CB-45ED-A36D-2CD8593382CB} = {3FFB6368-18CB-45ED-A36D-2CD8593382CB}
 	EndProjectSection
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Installer", "Installer\Installer.vdproj", "{E5B98D5A-A031-4D29-AC93-6833DB3253D1}"
-EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Installer64", "Installer64\Installer64.vdproj", "{AF851D3F-FF20-4735-8E30-46F3F673F862}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug Unity|Any CPU = Debug Unity|Any CPU
@@ -141,24 +137,6 @@ Global
 		{E5B98D5A-A031-4D29-AC93-6833DB3253D1}.Release|x64.Build.0 = Release
 		{E5B98D5A-A031-4D29-AC93-6833DB3253D1}.Release|x86.ActiveCfg = Release
 		{E5B98D5A-A031-4D29-AC93-6833DB3253D1}.Release|x86.Build.0 = Release
-		{AF851D3F-FF20-4735-8E30-46F3F673F862}.Debug Unity|Any CPU.ActiveCfg = Debug
-		{AF851D3F-FF20-4735-8E30-46F3F673F862}.Debug Unity|Any CPU.Build.0 = Debug
-		{AF851D3F-FF20-4735-8E30-46F3F673F862}.Debug Unity|x64.ActiveCfg = Debug
-		{AF851D3F-FF20-4735-8E30-46F3F673F862}.Debug Unity|x64.Build.0 = Debug
-		{AF851D3F-FF20-4735-8E30-46F3F673F862}.Debug Unity|x86.ActiveCfg = Debug
-		{AF851D3F-FF20-4735-8E30-46F3F673F862}.Debug Unity|x86.Build.0 = Debug
-		{AF851D3F-FF20-4735-8E30-46F3F673F862}.Debug|Any CPU.ActiveCfg = Debug
-		{AF851D3F-FF20-4735-8E30-46F3F673F862}.Debug|Any CPU.Build.0 = Debug
-		{AF851D3F-FF20-4735-8E30-46F3F673F862}.Debug|x64.ActiveCfg = Debug
-		{AF851D3F-FF20-4735-8E30-46F3F673F862}.Debug|x64.Build.0 = Debug
-		{AF851D3F-FF20-4735-8E30-46F3F673F862}.Debug|x86.ActiveCfg = Debug
-		{AF851D3F-FF20-4735-8E30-46F3F673F862}.Debug|x86.Build.0 = Debug
-		{AF851D3F-FF20-4735-8E30-46F3F673F862}.Release|Any CPU.ActiveCfg = Release
-		{AF851D3F-FF20-4735-8E30-46F3F673F862}.Release|Any CPU.Build.0 = Release
-		{AF851D3F-FF20-4735-8E30-46F3F673F862}.Release|x64.ActiveCfg = Release
-		{AF851D3F-FF20-4735-8E30-46F3F673F862}.Release|x64.Build.0 = Release
-		{AF851D3F-FF20-4735-8E30-46F3F673F862}.Release|x86.ActiveCfg = Release
-		{AF851D3F-FF20-4735-8E30-46F3F673F862}.Release|x86.Build.0 = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
