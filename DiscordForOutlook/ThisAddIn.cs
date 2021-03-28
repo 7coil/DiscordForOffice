@@ -1,6 +1,6 @@
-﻿using System;
-using DiscordRPC;
+﻿using DiscordRPC;
 using Microsoft.Office.Interop.Outlook;
+using System;
 
 namespace DiscordForOutlook
 {
@@ -44,7 +44,7 @@ namespace DiscordForOutlook
             this.Startup += new System.EventHandler(ThisAddIn_Startup);
             this.Shutdown += new System.EventHandler(ThisAddIn_Shutdown);
         }
-        
+
         #endregion
     }
 }

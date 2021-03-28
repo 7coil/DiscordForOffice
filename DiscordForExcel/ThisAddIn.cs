@@ -1,6 +1,6 @@
-﻿using System;
-using DiscordRPC;
+﻿using DiscordRPC;
 using Microsoft.Office.Interop.Excel;
+using System;
 
 namespace DiscordForExcel
 {
@@ -64,7 +64,7 @@ namespace DiscordForExcel
             this.Startup += new System.EventHandler(ThisAddIn_Startup);
             this.Shutdown += new System.EventHandler(ThisAddIn_Shutdown);
         }
-        
+
         #endregion
     }
 }

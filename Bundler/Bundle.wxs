@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi" xmlns:bal="http://schemas.microsoft.com/wix/BalExtension">
+	<Bundle Name="DiscordForOffice" Version="1.2.0" Manufacturer="Leondro Lio" UpgradeCode="53086bb4-e7a1-4266-8cd7-1df3adac5ab0">
+		<BootstrapperApplicationRef Id="WixStandardBootstrapperApplication.HyperlinkSidebarLicense">
+			<bal:WixStandardBootstrapperApplication
+				SuppressOptionsUI="yes"
+				LicenseUrl="https://github.com/7coil/DiscordForOffice/blob/master/LICENCE"
+				LocalizationFile="Locale.wxl"
+				ShowVersion="yes"
+				LogoSideFile="dialog.bmp"
+			/>
+		</BootstrapperApplicationRef>
+
+		<Chain>
+			<PackageGroupRef Id="NetFx45Web"/>
+			<MsiPackage Id="Installer" InstallCondition='NOT VersionNT64' SourceFile="$(var.Installer.TargetPath)" Name="DiscordForOffice (for 32-bit Office)" />
+			<MsiPackage Id="Installer64" InstallCondition='VersionNT64' SourceFile="$(var.Installer64.TargetPath)" Name="DiscordForOffice (for 32 and 64-bit Office)" />
+		</Chain>
+	</Bundle>
+</Wix>

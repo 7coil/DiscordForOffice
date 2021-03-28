@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Include>
+	<Component Guid="*" Win64="no">
+		<RegistryValue Id="Excel_RegKey_FriendlyName" Root="HKLM" Key="Software\Microsoft\Office\Excel\AddIns\$(var.DiscordForExcel.TargetName)" Name="FriendlyName" Value="DiscordForExcel" Type="string" />
+		<RegistryValue Id="Excel_RegKey_Description" Root="HKLM" Key="Software\Microsoft\Office\Excel\AddIns\$(var.DiscordForExcel.TargetName)" Name="Description" Value="Excel yourself to your friends with DiscordForOffice" Type="string" />
+		<RegistryValue Id="Excel_RegKey_Manifest" Root="HKLM" Key="Software\Microsoft\Office\Excel\AddIns\$(var.DiscordForExcel.TargetName)" Name="Manifest" Value="[INSTALLFOLDER]$(var.DiscordForExcel.TargetName).vsto|vstolocal" Type="string" />
+		<RegistryValue Id="Excel_RegKey_LoadBehavior" Root="HKLM" Key="Software\Microsoft\Office\Excel\AddIns\$(var.DiscordForExcel.TargetName)" Name="LoadBehavior" Value="3" Type="integer" />
+
+		<RegistryValue Id="Outlook_RegKey_FriendlyName" Root="HKLM" Key="Software\Microsoft\Office\Outlook\AddIns\$(var.DiscordForOutlook.TargetName)" Name="FriendlyName" Value="DiscordForOutlook" Type="string" />
+		<RegistryValue Id="Outlook_RegKey_Description" Root="HKLM" Key="Software\Microsoft\Office\Outlook\AddIns\$(var.DiscordForOutlook.TargetName)" Name="Description" Value="Get a better Outlook on life, with DiscordForOffice" Type="string" />
+		<RegistryValue Id="Outlook_RegKey_Manifest" Root="HKLM" Key="Software\Microsoft\Office\Outlook\AddIns\$(var.DiscordForOutlook.TargetName)" Name="Manifest" Value="[INSTALLFOLDER]$(var.DiscordForOutlook.TargetName).vsto|vstolocal" Type="string" />
+		<RegistryValue Id="Outlook_RegKey_LoadBehavior" Root="HKLM" Key="Software\Microsoft\Office\Outlook\AddIns\$(var.DiscordForOutlook.TargetName)" Name="LoadBehavior" Value="3" Type="integer" />
+
+		<RegistryValue Id="PowerPoint_RegKey_FriendlyName" Root="HKLM" Key="Software\Microsoft\Office\PowerPoint\AddIns\$(var.DiscordForPowerPoint.TargetName)" Name="FriendlyName" Value="DiscordForPowerPoint" Type="string" />
+		<RegistryValue Id="PowerPoint_RegKey_Description" Root="HKLM" Key="Software\Microsoft\Office\PowerPoint\AddIns\$(var.DiscordForPowerPoint.TargetName)" Name="Description" Value="Share your PowerPoint skills around the world with DiscordForOffice" Type="string" />
+		<RegistryValue Id="PowerPoint_RegKey_Manifest" Root="HKLM" Key="Software\Microsoft\Office\PowerPoint\AddIns\$(var.DiscordForPowerPoint.TargetName)" Name="Manifest" Value="[INSTALLFOLDER]$(var.DiscordForPowerPoint.TargetName).vsto|vstolocal" Type="string" />
+		<RegistryValue Id="PowerPoint_RegKey_LoadBehavior" Root="HKLM" Key="Software\Microsoft\Office\PowerPoint\AddIns\$(var.DiscordForPowerPoint.TargetName)" Name="LoadBehavior" Value="3" Type="integer" />
+
+		<RegistryValue Id="Word_RegKey_FriendlyName" Root="HKLM" Key="Software\Microsoft\Office\Word\AddIns\$(var.DiscordForWord.TargetName)" Name="FriendlyName" Value="DiscordForWord" Type="string" />
+		<RegistryValue Id="Word_RegKey_Description" Root="HKLM" Key="Software\Microsoft\Office\Word\AddIns\$(var.DiscordForWord.TargetName)" Name="Description" Value="Make Discord worth a thousand Words with DiscordForOffice" Type="string" />
+		<RegistryValue Id="Word_RegKey_Manifest" Root="HKLM" Key="Software\Microsoft\Office\Word\AddIns\$(var.DiscordForWord.TargetName)" Name="Manifest" Value="[INSTALLFOLDER]$(var.DiscordForWord.TargetName).vsto|vstolocal" Type="string" />
+		<RegistryValue Id="Word_RegKey_LoadBehavior" Root="HKLM" Key="Software\Microsoft\Office\Word\AddIns\$(var.DiscordForWord.TargetName)" Name="LoadBehavior" Value="3" Type="integer" />
+	</Component>
+
+	<?if $(var.Platform) = x64 ?>
+		<Component Guid="*" Win64="yes">
+			<RegistryValue Id="AMD_Excel_RegKey_FriendlyName" Root="HKLM" Key="Software\Microsoft\Office\Excel\AddIns\$(var.DiscordForExcel.TargetName)" Name="FriendlyName" Value="DiscordForExcel" Type="string" />
+			<RegistryValue Id="AMD_Excel_RegKey_Description" Root="HKLM" Key="Software\Microsoft\Office\Excel\AddIns\$(var.DiscordForExcel.TargetName)" Name="Description" Value="Excel yourself to your friends with DiscordForOffice" Type="string" />
+			<RegistryValue Id="AMD_Excel_RegKey_Manifest" Root="HKLM" Key="Software\Microsoft\Office\Excel\AddIns\$(var.DiscordForExcel.TargetName)" Name="Manifest" Value="[INSTALLFOLDER]$(var.DiscordForExcel.TargetName).vsto|vstolocal" Type="string" />
+			<RegistryValue Id="AMD_Excel_RegKey_LoadBehavior" Root="HKLM" Key="Software\Microsoft\Office\Excel\AddIns\$(var.DiscordForExcel.TargetName)" Name="LoadBehavior" Value="3" Type="integer" />
+
+			<RegistryValue Id="AMD_Outlook_RegKey_FriendlyName" Root="HKLM" Key="Software\Microsoft\Office\Outlook\AddIns\$(var.DiscordForOutlook.TargetName)" Name="FriendlyName" Value="DiscordForOutlook" Type="string" />
+			<RegistryValue Id="AMD_Outlook_RegKey_Description" Root="HKLM" Key="Software\Microsoft\Office\Outlook\AddIns\$(var.DiscordForOutlook.TargetName)" Name="Description" Value="Get a better Outlook on life, with DiscordForOffice" Type="string" />
+			<RegistryValue Id="AMD_Outlook_RegKey_Manifest" Root="HKLM" Key="Software\Microsoft\Office\Outlook\AddIns\$(var.DiscordForOutlook.TargetName)" Name="Manifest" Value="[INSTALLFOLDER]$(var.DiscordForOutlook.TargetName).vsto|vstolocal" Type="string" />
+			<RegistryValue Id="AMD_Outlook_RegKey_LoadBehavior" Root="HKLM" Key="Software\Microsoft\Office\Outlook\AddIns\$(var.DiscordForOutlook.TargetName)" Name="LoadBehavior" Value="3" Type="integer" />
+
+			<RegistryValue Id="AMD_PowerPoint_RegKey_FriendlyName" Root="HKLM" Key="Software\Microsoft\Office\PowerPoint\AddIns\$(var.DiscordForPowerPoint.TargetName)" Name="FriendlyName" Value="DiscordForPowerPoint" Type="string" />
+			<RegistryValue Id="AMD_PowerPoint_RegKey_Description" Root="HKLM" Key="Software\Microsoft\Office\PowerPoint\AddIns\$(var.DiscordForPowerPoint.TargetName)" Name="Description" Value="Share your PowerPoint skills around the world with DiscordForOffice" Type="string" />
+			<RegistryValue Id="AMD_PowerPoint_RegKey_Manifest" Root="HKLM" Key="Software\Microsoft\Office\PowerPoint\AddIns\$(var.DiscordForPowerPoint.TargetName)" Name="Manifest" Value="[INSTALLFOLDER]$(var.DiscordForPowerPoint.TargetName).vsto|vstolocal" Type="string" />
+			<RegistryValue Id="AMD_PowerPoint_RegKey_LoadBehavior" Root="HKLM" Key="Software\Microsoft\Office\PowerPoint\AddIns\$(var.DiscordForPowerPoint.TargetName)" Name="LoadBehavior" Value="3" Type="integer" />
+
+			<RegistryValue Id="AMD_Word_RegKey_FriendlyName" Root="HKLM" Key="Software\Microsoft\Office\Word\AddIns\$(var.DiscordForWord.TargetName)" Name="FriendlyName" Value="DiscordForWord" Type="string" />
+			<RegistryValue Id="AMD_Word_RegKey_Description" Root="HKLM" Key="Software\Microsoft\Office\Word\AddIns\$(var.DiscordForWord.TargetName)" Name="Description" Value="Make Discord worth a thousand Words with DiscordForOffice" Type="string" />
+			<RegistryValue Id="AMD_Word_RegKey_Manifest" Root="HKLM" Key="Software\Microsoft\Office\Word\AddIns\$(var.DiscordForWord.TargetName)" Name="Manifest" Value="[INSTALLFOLDER]$(var.DiscordForWord.TargetName).vsto|vstolocal" Type="string" />
+			<RegistryValue Id="AMD_Word_RegKey_LoadBehavior" Root="HKLM" Key="Software\Microsoft\Office\Word\AddIns\$(var.DiscordForWord.TargetName)" Name="LoadBehavior" Value="3" Type="integer" />
+		</Component>
+	<?endif ?>
+
+</Include>

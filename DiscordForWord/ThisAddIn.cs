@@ -1,6 +1,6 @@
-﻿using System;
-using DiscordRPC;
+﻿using DiscordRPC;
 using Microsoft.Office.Interop.Word;
+using System;
 
 namespace DiscordForWord
 {
@@ -33,10 +33,11 @@ namespace DiscordForWord
                 // Use the currently opened document
                 Document doc = this.Application.ActiveDocument;
                 Application_DocumentOpen(doc);
-            } catch
+            }
+            catch
             {
                 // Use the default presence when there is no current document
-                
+
             }
         }
 
@@ -67,7 +68,8 @@ namespace DiscordForWord
             {
                 presence.Details = "" + Application.Documents.Count;
                 Application_WindowSelectionChange(Application.Selection);
-            } else
+            }
+            else
             {
                 presence.Details = Shared.Shared.getString("tabOut") + Application.Documents.Count;
                 presence.State = null;

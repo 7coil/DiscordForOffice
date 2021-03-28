@@ -26,7 +26,7 @@
     <NoStandardLibraries>false</NoStandardLibraries>
     <RootNamespace>DiscordForExcel</RootNamespace>
     <AssemblyName>DiscordForExcel</AssemblyName>
-    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <DefineConstants>VSTO40</DefineConstants>
     <IsWebBootstrapper>False</IsWebBootstrapper>
     <TargetFrameworkProfile />
@@ -257,10 +257,7 @@
     </VisualStudio>
   </ProjectExtensions>
   <PropertyGroup>
-    <PostBuildEvent>copy "$(TargetDir)$(TargetName).dll.manifest" $(SolutionDir)Installer\
-copy "$(TargetDir)$(TargetName).vsto" $(SolutionDir)Installer\
-copy "$(TargetDir)$(TargetName).dll.manifest" $(SolutionDir)Installer64\
-copy "$(TargetDir)$(TargetName).vsto" $(SolutionDir)Installer64\
-</PostBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
   </PropertyGroup>
 </Project>

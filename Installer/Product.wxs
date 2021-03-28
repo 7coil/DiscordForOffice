@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<?if $(var.Platform) = x64 ?>
+		<?define PlatformProgramFilesFolder = "ProgramFiles64Folder" ?>
+	<?else ?>
+		<?define PlatformProgramFilesFolder = "ProgramFilesFolder" ?>
+	<?endif ?>
+	
+	<Product Id="4BC41993-0F7E-43CF-9327-60C369EADF38" Name="DiscordForOffice (32-bit)" Language="1033" Version="1.2.0" Manufacturer="Leondro Lio" UpgradeCode="F40B66F9-0D83-4961-9160-4B3B5974E534">
+		<Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
+
+		<MediaTemplate EmbedCab="yes" />
+
+		<Feature Id="ProductFeature" Title="Installer" Level="1">
+			<ComponentGroupRef Id="ProductComponents" />
+		</Feature>
+	</Product>
+
+	<Fragment>
+		<Directory Id="TARGETDIR" Name="SourceDir">
+			<Directory Id="$(var.PlatformProgramFilesFolder)">
+				<Directory Id="Company" Name="Leondro Lio">
+					<Directory Id="INSTALLFOLDER" Name="DiscordForOffice" />
+				</Directory>
+			</Directory>
+		</Directory>
+	</Fragment>
+
+	<Fragment>
+		<ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
+			<Component Id="ProductComponent" Guid="85301F47-945B-4302-BF7A-7DC92FC80F49">
+				<File Source="$(var.DiscordForExcel.TargetPath)" />
+				<File Source="$(var.DiscordForExcel.TargetPath).manifest" />
+				<File Source="$(var.DiscordForExcel.TargetDir)$(var.DiscordForExcel.TargetName).vsto" />
+
+				<File Source="$(var.DiscordForOutlook.TargetPath)" />
+				<File Source="$(var.DiscordForOutlook.TargetPath).manifest" />
+				<File Source="$(var.DiscordForOutlook.TargetDir)$(var.DiscordForOutlook.TargetName).vsto" />
+				<File Source="$(var.DiscordForOutlook.TargetDir)Microsoft.Office.Tools.Outlook.v4.0.Utilities.dll" />
+
+				<File Source="$(var.DiscordForPowerPoint.TargetPath)" />
+				<File Source="$(var.DiscordForPowerPoint.TargetPath).manifest" />
+				<File Source="$(var.DiscordForPowerPoint.TargetDir)$(var.DiscordForPowerPoint.TargetName).vsto" />
+
+				<File Source="$(var.DiscordForWord.TargetPath)" />
+				<File Source="$(var.DiscordForWord.TargetPath).manifest" />
+				<File Source="$(var.DiscordForWord.TargetDir)$(var.DiscordForWord.TargetName).vsto" />
+
+				<File Source="$(var.DiscordForWord.TargetDir)Microsoft.Office.Tools.Common.v4.0.Utilities.dll" />
+				<File Source="$(var.Shared.TargetPath)" />
+				<File Source="$(var.Shared.TargetDir)DiscordRPC.dll" />
+				<File Source="$(var.Shared.TargetDir)Newtonsoft.JSON.dll" />
+			</Component>
+
+			<?include RegistryKeys.wxi ?>
+		</ComponentGroup>
+	</Fragment>
+</Wix>

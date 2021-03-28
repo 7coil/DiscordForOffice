@@ -1,6 +1,6 @@
-﻿using System;
-using DiscordRPC;
+﻿using DiscordRPC;
 using Microsoft.Office.Interop.PowerPoint;
+using System;
 
 namespace DiscordForPowerPoint
 {
@@ -16,7 +16,7 @@ namespace DiscordForPowerPoint
             client.SetPresence(presence);
 
             // An event handler for when a new slide is created
-            this.Application.PresentationNewSlide += 
+            this.Application.PresentationNewSlide +=
                 new EApplication_PresentationNewSlideEventHandler(
                 Application_PresentationNewSlide);
 
@@ -95,7 +95,8 @@ namespace DiscordForPowerPoint
                 presence.State = null;
                 presence.Party = null;
                 presence.Assets.LargeImageKey = "nothing";
-            } else
+            }
+            else
             {
                 presence.Details = Application.ActivePresentation.Name;
             }
@@ -137,7 +138,7 @@ namespace DiscordForPowerPoint
             this.Startup += new System.EventHandler(ThisAddIn_Startup);
             this.Shutdown += new System.EventHandler(ThisAddIn_Shutdown);
         }
-        
+
         #endregion
     }
 }

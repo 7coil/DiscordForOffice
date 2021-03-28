@@ -43,7 +43,8 @@ namespace Shared
             if (OfficeVersions.ContainsKey(version))
             {
                 return OfficeVersions[version];
-            } else
+            }
+            else
             {
                 return getString("unknown_version");
             }
@@ -54,7 +55,8 @@ namespace Shared
             if (Strings.ContainsKey(key))
             {
                 return Strings[key];
-            } else
+            }
+            else
             {
                 return getString("unknown_key");
             }
