@@ -34,6 +34,6 @@ Show the world how much you love presenting, spreadsheets and writing with the f
 ## Compiling
 1. Enable `Office/SharePoint development` in the Visual Studio Installer
 2. Right click the solution and select the build option
-3. The installer, which is ready to distribute, can be found at the following paths
-    - `/Installer/[Release or Debug]/DiscordForOffice.msi`
-    - `/Installer64/[Release or Debug]/DiscordForOffice.msi`
+3. The installer, which is ready to distribute, can be found here:
+    - `/Bundler/bin/Debug/DiscordForOffice.exe`
+    - `/Bundler/bin/Release/DiscordForOffice.exe`
