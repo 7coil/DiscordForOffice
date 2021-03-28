@@ -6,7 +6,7 @@
     <ProductVersion>3.10</ProductVersion>
     <ProjectGuid>53086bb4-e7a1-4266-8cd7-1df3adac5ab0</ProjectGuid>
     <SchemaVersion>2.0</SchemaVersion>
-    <OutputName>Bundler</OutputName>
+    <OutputName>DiscordForOffice</OutputName>
     <OutputType>Bundle</OutputType>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
