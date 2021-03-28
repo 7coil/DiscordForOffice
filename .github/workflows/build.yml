@@ -11,11 +11,20 @@ jobs:
 
     runs-on: windows-latest
 
+    env:
+      MSBUILD_PATH: C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\Common7\IDE\devenv.exe
+
     steps:
     - uses: actions/checkout@v2
     - name: Setup msbuild
-      uses: microsoft/setup-msbuild@v1.0.2
+      uses: microsoft/setup-msbuild@v1
     - name: Restore dependencies
       run: nuget restore DiscordForOffice.sln
     - name: Build project
-      run: Start-Process -FilePath "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\Common7\IDE\devenv.exe" -ArgumentList "DiscordForOffice.sln","/Build"
+      shell: cmd
+      run: |
+        "%MSBUILD_PATH%" "DiscordForOffice.sln" /build release
+    - uses: actions/upload-artifact@v2
+      with:
+        name: my-artifact
+        path: Bundler/bin/Release/DiscordForOffice.exe
