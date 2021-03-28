@@ -21,5 +21,5 @@ jobs:
       run: msbuild DiscordForOffice.sln /p:Configuration="Release" /property:Platform="Any CPU"
     - uses: actions/upload-artifact@v2
       with:
-        name: my-artifact
+        name: Installer
         path: Bundler/bin/Release/DiscordForOffice.exe
