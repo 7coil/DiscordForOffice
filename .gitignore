@@ -261,7 +261,6 @@ __pycache__/
 *.pyc
 
 # Remove stuff that isn't ours
-assets/
 packages/
 
 # Private keys yay

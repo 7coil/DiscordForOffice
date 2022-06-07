@@ -7,13 +7,19 @@ namespace DiscordForWord
     public partial class ThisAddIn
     {
         public DiscordRpcClient client;
-        private static RichPresence presence = Shared.Shared.getNewPresence("word");
+        private static RichPresence presence = Shared.Shared.getNewPresence(Shared.Program.WORD);
 
         private void ThisAddIn_Startup(object sender, System.EventArgs e)
         {
             client = new DiscordRpcClient(Shared.Shared.getString("discordID"));
             client.Initialize();
-            client.SetPresence(presence);
+
+            if (Shared.Shared.isEnabled())
+            {
+                client.SetPresence(presence);
+                return;
+            }
+            
 
             this.Application.WindowDeactivate += new ApplicationEvents4_WindowDeactivateEventHandler(
                 Application_WindowDeactivate);
@@ -43,6 +49,12 @@ namespace DiscordForWord
 
         private void Application_DocumentChange()
         {
+            if (!Shared.Shared.isEnabled())
+            {
+                client.ClearPresence();
+                return;
+            }
+
             if (Application.Documents.Count == 1)
             {
                 Application_WindowSelectionChange(Application.Selection);
@@ -51,6 +63,12 @@ namespace DiscordForWord
 
         private void Application_WindowDeactivate(Document doc, Window wn)
         {
+            if (!Shared.Shared.isEnabled())
+            {
+                client.ClearPresence();
+                return;
+            }
+
             if (Application.Documents.Count == 1)
             {
                 presence.Details = Shared.Shared.getString("tabOut");
@@ -64,6 +82,12 @@ namespace DiscordForWord
 
         private void Application_WindowClose()
         {
+            if (!Shared.Shared.isEnabled())
+            {
+                client.ClearPresence();
+                return;
+            }
+
             if (Application.Documents.Count > 1)
             {
                 presence.Details = "" + Application.Documents.Count;
@@ -94,6 +118,12 @@ namespace DiscordForWord
 
         public void Application_WindowSelectionChange(Selection sel)
         {
+            if (!Shared.Shared.isEnabled())
+            {
+                client.ClearPresence();
+                return;
+            }
+
             Range range = Application.ActiveDocument.Content;
 
             presence.Details = Application.ActiveDocument.Name;

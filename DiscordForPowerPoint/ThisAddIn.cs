@@ -7,7 +7,7 @@ namespace DiscordForPowerPoint
     public partial class ThisAddIn
     {
         public DiscordRpcClient client;
-        private static RichPresence presence = Shared.Shared.getNewPresence("powerpoint");
+        private static RichPresence presence = Shared.Shared.getNewPresence(Shared.Program.POWERPOINT);
 
         private void ThisAddIn_Startup(object sender, EventArgs e)
         {

@@ -7,7 +7,7 @@ namespace DiscordForExcel
     public partial class ThisAddIn
     {
         public DiscordRpcClient client;
-        private static RichPresence presence = Shared.Shared.getNewPresence("excel");
+        private static RichPresence presence = Shared.Shared.getNewPresence(Shared.Program.EXCEL);
 
         private void ThisAddIn_Startup(object sender, EventArgs e)
         {

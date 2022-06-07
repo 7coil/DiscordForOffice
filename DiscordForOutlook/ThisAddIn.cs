@@ -7,7 +7,7 @@ namespace DiscordForOutlook
     public partial class ThisAddIn
     {
         public DiscordRpcClient client;
-        private static RichPresence presence = Shared.Shared.getNewPresence("outlook");
+        private static RichPresence presence = Shared.Shared.getNewPresence(Shared.Program.OUTLOOK);
 
         private void ThisAddIn_Startup(object sender, EventArgs e)
         {
